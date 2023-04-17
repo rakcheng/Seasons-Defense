@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7a65aa89fec714ca89368e79e1ea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
 --- !u!114 &-6886598798259333277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,4 +133,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
-  offset: 0
+  smartBombPrefab: {fileID: 3170842644326132439, guid: 21886160689c03a47891fa0a910447f3, type: 3}
+  delayMissileSpawn: 5
