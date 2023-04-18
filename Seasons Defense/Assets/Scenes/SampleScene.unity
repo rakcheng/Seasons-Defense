@@ -1385,6 +1385,7 @@ MonoBehaviour:
   - {fileID: 308833298}
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
   delayMissileSpawn: 1
+  enemyMissileCount: 20
 --- !u!4 &1425633150
 Transform:
   m_ObjectHideFlags: 0
@@ -1919,10 +1920,11 @@ MonoBehaviour:
   - {fileID: 1136772625}
   - {fileID: 196117451}
   - {fileID: 698521024}
-  satellitesPrefab: {fileID: 8208624755453525033, guid: c71ff96146a05614aa6e7a6ea29df114, type: 3}
-  bomberPlanePrefab: {fileID: 1264650023425028139, guid: 0bb330c3f4d38224cba62aa2a529dae8, type: 3}
-  satellitesInterval: 3
-  bomberPlaneInterval: 15
+  enemiesPrefab:
+  - {fileID: 8208624755453525033, guid: c71ff96146a05614aa6e7a6ea29df114, type: 3}
+  - {fileID: 1264650023425028139, guid: 0bb330c3f4d38224cba62aa2a529dae8, type: 3}
+  enemyInterval: 3
+  enemyCount: 5
 --- !u!1 &2090375918
 GameObject:
   m_ObjectHideFlags: 0

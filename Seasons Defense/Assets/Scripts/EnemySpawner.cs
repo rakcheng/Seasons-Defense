@@ -8,28 +8,31 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] spawnLocations;
     
     //Enemy Prefabs
-    public GameObject satellitesPrefab;
-    public GameObject bomberPlanePrefab;
+    public GameObject[] enemiesPrefab;
 
     //How often the enemies will spawn in
-    public float satellitesInterval = 3f;
-    public float bomberPlaneInterval = 15f;
+    public float enemyInterval = 3f;
+
+    public int enemyCount = 5;
     
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnEnemyRate(satellitesInterval, satellitesPrefab));
-        StartCoroutine(spawnEnemyRate(bomberPlaneInterval, bomberPlanePrefab));
+        StartCoroutine(SpawnEnemies(enemyInterval, enemiesPrefab));
     }
 
-    private IEnumerator spawnEnemyRate(float interval, GameObject enemies)
+    private IEnumerator SpawnEnemies(float interval, GameObject[] enemy)
     {
-        yield return new WaitForSeconds(interval);
-        
-        //Chooses a random Spawn Point location for the enemy
-        int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
-        GameObject enemy = Instantiate(enemies, spawnLocations[randomSpawnPoint].position,Quaternion.identity);
-        StartCoroutine(spawnEnemyRate(interval, enemy));
+
+        while (enemyCount > 0)
+        {
+            //Chooses a random Spawn Point location for the enemy
+            int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
+            int i = Random.Range(0, enemy.Length);
+            Instantiate(enemy[i], spawnLocations[randomSpawnPoint].position, Quaternion.identity);
+            yield return new WaitForSeconds(interval);
+            enemyCount--;
+        }
 
     }
 }
