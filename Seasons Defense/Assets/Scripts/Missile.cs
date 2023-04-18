@@ -10,6 +10,7 @@ public class Missile : MonoBehaviour
     private void Start()
     {
         transform.LookAt(target);
+        speed = 5;
     }
     private void Update()
     {

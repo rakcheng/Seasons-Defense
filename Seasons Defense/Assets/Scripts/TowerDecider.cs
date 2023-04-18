@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class TowerDecider : MonoBehaviour
 {
-    public GameObject leftTurret;
-    public GameObject middleTurret;
-    public GameObject rightTurret;
+    public Tower leftTower;
+    public Tower middleTower;
+    public Tower rightTower;
 
-    private float THIRD = Screen.width / 3f;
+    private float _third = Screen.width / 3f;
 
     private void Update()
     {
@@ -18,15 +18,14 @@ public class TowerDecider : MonoBehaviour
             //TODO: Add more logic to this algorithm to decide the next best turret to use,
             //      if the current one has no missiles left
 
-            if (xPosOnClick < THIRD) TowerToShoot(leftTurret);
-            else if (xPosOnClick > THIRD && xPosOnClick < (THIRD * 2f)) TowerToShoot(middleTurret);
-            else TowerToShoot(rightTurret);
+            if (xPosOnClick < _third) TowerToShoot(leftTower);
+            else if (xPosOnClick > _third && xPosOnClick < (_third * 2f)) TowerToShoot(middleTower);
+            else TowerToShoot(rightTower);
         }
     }
 
-    private void TowerToShoot(GameObject turret)
+    private void TowerToShoot(Tower tower)
     {
-        TowerController turretController = turret.GetComponent<TowerController>();
-        turretController.Fire();
+        tower.Fire();
     }
 }
