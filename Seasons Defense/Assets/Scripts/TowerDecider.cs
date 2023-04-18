@@ -18,14 +18,10 @@ public class TowerDecider : MonoBehaviour
             //TODO: Add more logic to this algorithm to decide the next best turret to use,
             //      if the current one has no missiles left
 
-            if (xPosOnClick < _third) TowerToShoot(leftTower);
-            else if (xPosOnClick > _third && xPosOnClick < (_third * 2f)) TowerToShoot(middleTower);
-            else TowerToShoot(rightTower);
+            if (xPosOnClick < _third) leftTower.Fire();
+            else if (xPosOnClick > _third && xPosOnClick < (_third * 2f)) middleTower.Fire();
+            else rightTower.Fire();
         }
     }
 
-    private void TowerToShoot(Tower tower)
-    {
-        tower.Fire();
-    }
 }
