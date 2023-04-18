@@ -366,9 +366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c21a463deebfff46a5d8e7af36c6506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftTurret: {fileID: 1682366852}
-  middleTurret: {fileID: 82748890}
-  rightTurret: {fileID: 1231842514}
+  leftTower: {fileID: 1682366853}
+  middleTower: {fileID: 82748891}
+  rightTower: {fileID: 1231842515}
 --- !u!4 &836726718
 Transform:
   m_ObjectHideFlags: 0
