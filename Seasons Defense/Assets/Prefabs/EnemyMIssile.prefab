@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4251917387982688984}
   - component: {fileID: -9201503751174207990}
   m_Layer: 0
-  m_Name: EnemyMIssile
+  m_Name: EnemyMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &152481718640775366
 MeshFilter:
