@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MissileSpawner : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class MissileSpawner : MonoBehaviour
     //Delay how fast the missiles Spawn
     public float delayMissileSpawn = 5f;
 
-    public float missileSpawnCount = 10;
+    public float enemyMissileCount = 10;
     
 
     void Start()
@@ -22,13 +23,13 @@ public class MissileSpawner : MonoBehaviour
     private IEnumerator SpawnMissiles(float interval, GameObject missile)
     {
 
-        while (missileSpawnCount > 0)
+        while (enemyMissileCount > 0)
         {
             //Chooses a random Spawn Point location for the enemy
             int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
             GameObject _missile = Instantiate(missile, spawnLocations[randomSpawnPoint].position, Quaternion.identity);
             yield return new WaitForSeconds(interval);
-            missileSpawnCount--;
+            enemyMissileCount--;
         }
 
     }
