@@ -14,17 +14,7 @@ public class Explosion : MonoBehaviour
         // Play the explosion animation
         animator.Play("ExplosionBlast");
         
-        // Begin timer to destroy game object
-        StartCoroutine(DestroyExplosion());
-
-    }
-
-    private IEnumerator DestroyExplosion()
-    {
-        // Yield for timeToDestroy seconds
-        yield return new WaitForSeconds(timeToDestroy);
-        
-        // Destroy the object
+        // Destroy the object, following a timer
         Destroy(gameObject, timeToDestroy);
     }
 }
