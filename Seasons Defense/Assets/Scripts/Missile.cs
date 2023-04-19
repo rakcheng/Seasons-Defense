@@ -5,11 +5,12 @@ public class Missile : MonoBehaviour
     //Reason to hide in inspector, is to force setting the target in code. 
     [HideInInspector]
     public Vector3 target;
-    public int speed;
+    public int speed = 5;
 
     private void Start()
     {
         transform.LookAt(target);
+        
     }
     private void Update()
     {
