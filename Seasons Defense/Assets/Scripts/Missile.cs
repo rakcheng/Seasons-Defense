@@ -2,20 +2,35 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
+    // Prefab definitions
+    public GameObject explosionPrefab;
+
     //Reason to hide in inspector, is to force setting the target in code. 
     [HideInInspector]
     public Vector3 target;
-    public int speed;
-
+    public int speed = 5;
+    
     private void Start()
     {
         transform.LookAt(target);
+        
     }
     private void Update()
     {
         // Missile position will keep updating as it moves towards its target
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (transform.position == target) Destroy(gameObject);
+        if (transform.position == target) Explode();
+    }
+
+    // Creates an explosion, which should handle damaging player structures itself
+    // The missile is therefore just a vehicle for determining when/where to spawn an explosion, which actually does the real damage
+    private void Explode()
+    {
+        // Creates an explosion object at missile's location
+        Instantiate(explosionPrefab);
+
+        // Missile is no longer needed
+        Destroy(gameObject);
     }
 
 }
