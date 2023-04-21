@@ -10,17 +10,31 @@ public class TowerDecider : MonoBehaviour
 
     private void Update()
     {
-        
         if(Input.GetMouseButtonDown(0))
         {
             float xPosOnClick = Input.mousePosition.x;
 
-            //TODO: Add more logic to this algorithm to decide the next best turret to use,
-            //      if the current one has no missiles left
+            if (xPosOnClick < _third) TowerToShoot(leftTower, middleTower, rightTower);
+            else if (xPosOnClick > _third && xPosOnClick < (_third * 2f)) TowerToShoot(middleTower, leftTower, rightTower);
+            else TowerToShoot(rightTower, middleTower, leftTower);
+        }
+    }
 
-            if (xPosOnClick < _third) leftTower.Fire();
-            else if (xPosOnClick > _third && xPosOnClick < (_third * 2f)) middleTower.Fire();
-            else rightTower.Fire();
+    public void TowerToShoot(Tower optimal, Tower secondChoice, Tower lastChoice)
+    {
+        // This can be more complex, but for the time being it works.
+
+        if(optimal.getMissileCount() > 0)
+        {
+            optimal.Fire();
+        }
+        else if(secondChoice.getMissileCount() > 0)
+        {
+            secondChoice.Fire();
+        }
+        else if(lastChoice.getMissileCount() > 0)
+        {
+            lastChoice.Fire();
         }
     }
 

@@ -13,7 +13,6 @@ public class Missile : MonoBehaviour
     private void Start()
     {
         transform.LookAt(target);
-        
     }
     private void Update()
     {
@@ -27,7 +26,7 @@ public class Missile : MonoBehaviour
     private void Explode()
     {
         // Creates an explosion object at missile's location
-        Instantiate(explosionPrefab);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         // Missile is no longer needed
         Destroy(gameObject);
