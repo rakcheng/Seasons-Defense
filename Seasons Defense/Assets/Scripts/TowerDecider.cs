@@ -22,6 +22,8 @@ public class TowerDecider : MonoBehaviour
 
     public void TowerToShoot(Tower optimal, Tower secondChoice, Tower lastChoice)
     {
+        // This can be more complex, but for the time being it works.
+
         if(optimal.getMissileCount() > 0)
         {
             optimal.Fire();

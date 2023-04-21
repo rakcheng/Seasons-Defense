@@ -13,7 +13,6 @@ public class Missile : MonoBehaviour
     private void Start()
     {
         transform.LookAt(target);
-        
     }
     private void Update()
     {

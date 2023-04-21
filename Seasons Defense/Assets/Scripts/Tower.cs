@@ -15,6 +15,7 @@ public class Tower : MonoBehaviour
 
     public void Fire() {
 
+        // a tower will only fire if their missile count is greater than 0
         if (missileCount == 0) return;
 
         missileCount--;
@@ -33,6 +34,8 @@ public class Tower : MonoBehaviour
         }
     }
 
+
+    // Methods to set or get the missile count
     public int getMissileCount()
     {
         return this.missileCount;
