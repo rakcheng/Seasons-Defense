@@ -45,4 +45,9 @@ public class Tower : MonoBehaviour
     {
         this.missileCount += amount;
     }
+
+    public void disableTurret()
+    {
+        this.missileCount = 0;
+    }
 }
