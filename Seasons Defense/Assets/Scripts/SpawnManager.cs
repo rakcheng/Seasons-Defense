@@ -7,7 +7,9 @@ public  class SpawnManager : MonoBehaviour
     private static Vector3[] _transformPositions;
 
     // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
+
     {
         InitializePositions();
     }
