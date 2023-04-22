@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 152481718640775366}
   - component: {fileID: 4756709298873863527}
   - component: {fileID: 4251917387982688984}
-  - component: {fileID: -9201503751174207990}
+  - component: {fileID: -2054184774006192840}
   m_Layer: 0
-  m_Name: EnemyMissile
+  m_Name: EnemyMIssile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-9201503751174207990
+--- !u!114 &-2054184774006192840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,4 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 3727858198622731275, guid: 2f7668d8cd54a6b489d7598ad514ac64, type: 3}
   target: {x: 0, y: 0, z: 0}
-  speed: 7
+  speed: 5
