@@ -32,4 +32,9 @@ public class Missile : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void SetTarget(Vector3 newTarget)
+    {
+        target = newTarget;
+    }
+
 }
