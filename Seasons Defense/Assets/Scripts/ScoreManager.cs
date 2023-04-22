@@ -11,15 +11,15 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
 
-     int score = 0;
-     int highscore = 0;
+    int score = 0;
+    int highscore = 0;
 
-     private void Awake()
-     {
-         instance = this;
-     }
+    private void Awake()
+    {
+        instance = this;
+    }
 
-     void Start()
+    void Start()
     {
         highscore = PlayerPrefs.GetInt("highscore", 0);
         scoreText.text = "SCORE: " + score.ToString();
