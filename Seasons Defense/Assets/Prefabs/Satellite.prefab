@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6886598798259333277}
   m_Layer: 0
   m_Name: Satellite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  rightPadding: 11
+  leftPadding: -11
 --- !u!114 &-6886598798259333277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,5 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
-  smartBombPrefab: {fileID: 3170842644326132439, guid: 21886160689c03a47891fa0a910447f3, type: 3}
   delayMissileSpawn: 5
+  enemyMissileCount: 3

@@ -37,18 +37,31 @@ public class Explosion : MonoBehaviour
     {
         GameObject obj = hit.collider.gameObject;
 
-        // If the hit is a player missile ignore it
-        if (obj.name == "Missile") return;
+        // If the hit is a player missile call to have it exploded then destroyed
+        if (obj.GetComponent<Missile>())
+        {
+            obj.GetComponent<Missile>().BeingDestroyed();
+        }
         
         // if a tower -> disable it 
-        if(obj.GetComponent<Tower>())
+        else if (obj.GetComponent<Tower>()) 
         {
             obj.GetComponent<Tower>().disableTurret();
-            return;
         }
+        
+        else if (obj.CompareTag("Enemy"))
+        {
+            obj.GetComponent<Enemy>().BeingDestroyed();
+        }
+        
+        // else if (obj.GetComponent<City>())
+        // {
+        //     // obj.GetComponent<City>().BeingDestroyed();
+        //     Destroy(obj);
+        // }
 
         // For right now, everything else gets destroyed
-        Destroy(obj);
+        // Destroy(obj);
 
     }
 

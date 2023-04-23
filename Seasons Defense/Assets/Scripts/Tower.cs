@@ -10,9 +10,12 @@ public class Tower : MonoBehaviour
     
     private int missileCount = 5;
     private Vector3 _towerPosition;
+
+    public bool _disabled;
     
     private void Start()
     {
+        _disabled = false;
         _towerPosition = new Vector3(transform.position.x, transform.position.y + offset, 0);
         UpdateAmmoCount();
     }
@@ -54,7 +57,15 @@ public class Tower : MonoBehaviour
 
     public void disableTurret()
     {
+        if (_disabled) return;
+
+        _disabled = true;
+        
         this.missileCount = 0;
+        
+        LevelManager.TowersCount--;
+        LevelManager.BuildingDestroyed();
+        
         UpdateAmmoCount();
     }
     

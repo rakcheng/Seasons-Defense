@@ -20,9 +20,13 @@ public class MissileSpawner : MonoBehaviour
 
     private IEnumerator SpawnMissiles(float interval, GameObject missile)
     {
-
+        LevelManager.FinishedSpawningMissiles = false;
+        LevelManager.EnemyMissileCount = 0;
+        
         while (enemyMissileCount > 0)
         {
+            LevelManager.EnemyMissileCount++;
+
             //Chooses a random Spawn Point location for the enemy
             int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
             GameObject _missile = Instantiate(missile, spawnLocations[randomSpawnPoint].position, Quaternion.identity);
@@ -31,5 +35,6 @@ public class MissileSpawner : MonoBehaviour
             enemyMissileCount--;
         }
 
+        LevelManager.FinishedSpawningMissiles = true;
     }
 }
