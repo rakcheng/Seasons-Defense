@@ -54,11 +54,10 @@ public class Explosion : MonoBehaviour
             obj.GetComponent<Enemy>().BeingDestroyed();
         }
         
-        // else if (obj.GetComponent<City>())
-        // {
-        //     // obj.GetComponent<City>().BeingDestroyed();
-        //     Destroy(obj);
-        // }
+        else if (obj.GetComponent<City>())
+        {
+            obj.GetComponent<City>().BeingDestroyed();
+        }
 
         // For right now, everything else gets destroyed
         // Destroy(obj);

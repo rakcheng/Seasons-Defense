@@ -13,6 +13,12 @@ public class LevelManager : MonoBehaviour
     public static int CitiesCount;
     public static int TowersCount;
 
+    private static bool _levelOver = false;
+    
+    /*
+     * todo: add function to check for game-loss condition if the player runs out of ammo before end of level
+     */
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +40,9 @@ public class LevelManager : MonoBehaviour
     public static void EnemyDestroyed()
     {
         Debug.Log("Enemy destroyed.");
-        if (LevelCompleted())
+        if (LevelCompleted() && !_levelOver)
         {
+            _levelOver = true;
             Debug.Log("Level won!");
         }
     }
@@ -43,8 +50,9 @@ public class LevelManager : MonoBehaviour
     public static void BuildingDestroyed()
     {        
         Debug.Log("Building destroyed.");
-        if (LevelLost())
+        if (LevelLost() && !_levelOver)
         {
+            _levelOver = true;
             Debug.Log("Level lost!");
         }
     }
