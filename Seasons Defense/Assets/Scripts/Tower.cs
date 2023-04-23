@@ -52,6 +52,12 @@ public class Tower : MonoBehaviour
         this.missileCount += amount;
     }
 
+    public void disableTurret()
+    {
+        this.missileCount = 0;
+        UpdateAmmoCount();
+    }
+    
     private void UpdateAmmoCount()
     {
         ammoText.SetText("Ammo: " + missileCount);
