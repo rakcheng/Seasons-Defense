@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     public float delayMissileSpawn = 5f;
 
     public int enemyMissileCount = 3;
-
     void Start()
     {
         StartCoroutine(SpawnEnemyMissile());
@@ -20,7 +19,8 @@ public class Enemy : MonoBehaviour
     {
         while (enemyMissileCount > 0)
         {
-            Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            GameObject _missile = Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            _missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
             yield return new WaitForSeconds(delayMissileSpawn);
             enemyMissileCount--;
         }

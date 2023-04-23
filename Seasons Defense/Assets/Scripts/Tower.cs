@@ -1,7 +1,10 @@
 using UnityEngine;
+using TMPro;
 
 public class Tower : MonoBehaviour
 {
+    public TextMeshProUGUI ammoText;
+    
     public GameObject missilePrefab;
     public float offset;
     
@@ -11,6 +14,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         _towerPosition = new Vector3(transform.position.x, transform.position.y + offset, 0);
+        UpdateAmmoCount();
     }
 
     public void Fire() {
@@ -32,6 +36,8 @@ public class Tower : MonoBehaviour
         {
             missile.target = worldPosition;
         }
+        
+        UpdateAmmoCount();
     }
 
 
@@ -49,5 +55,11 @@ public class Tower : MonoBehaviour
     public void disableTurret()
     {
         this.missileCount = 0;
+        UpdateAmmoCount();
+    }
+    
+    private void UpdateAmmoCount()
+    {
+        ammoText.SetText("Ammo: " + missileCount);
     }
 }
