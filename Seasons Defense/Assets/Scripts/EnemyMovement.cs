@@ -34,7 +34,6 @@ public class EnemyMovement : MonoBehaviour
         // If Position x is beyond the padding bounds, the enemy will be de-spawned
         if (transform.position.x >= rightPadding || transform.position.x <= leftPadding)
         {
-            _moveRight = true;
             LevelManager.EnemiesCount--;
             LevelManager.EnemyDestroyed();
             Destroy(gameObject);
