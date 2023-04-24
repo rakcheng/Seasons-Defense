@@ -25,6 +25,8 @@ public class Missile : MonoBehaviour
     // The missile is therefore just a vehicle for determining when/where to spawn an explosion, which actually does the real damage
     private void Explode()
     {
+        GetComponent<Collider>().enabled = false;
+        
         // Creates an explosion object at missile's location
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
@@ -37,4 +39,11 @@ public class Missile : MonoBehaviour
         target = newTarget;
     }
 
+    // method called when a missile destroys this missile object
+    public void BeingDestroyed()
+    {
+        LevelManager.EnemyMissileCount--;
+        LevelManager.EnemyDestroyed();
+        Explode();
+    }
 }

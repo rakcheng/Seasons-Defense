@@ -25,4 +25,13 @@ public class Enemy : MonoBehaviour
             enemyMissileCount--;
         }
     }
+
+    // method called when a missile destroys this enemy object
+    // todo: add particle effects and/or animations to this method
+    public void BeingDestroyed()
+    {
+        LevelManager.EnemiesCount--;
+        LevelManager.EnemyDestroyed();
+        Destroy(gameObject);
+    }
 }

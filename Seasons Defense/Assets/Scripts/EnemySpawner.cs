@@ -23,9 +23,13 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies(float interval, GameObject[] enemy)
     {
-
+        LevelManager.FinishedSpawningEnemies = false;
+        LevelManager.EnemiesCount = 0;
+        
         while (enemyCount > 0)
         {
+            LevelManager.EnemiesCount++;
+
             //Chooses a random Spawn Point location for the enemy
             int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
             int i = Random.Range(0, enemy.Length);
@@ -33,6 +37,8 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(interval);
             enemyCount--;
         }
+
+        LevelManager.FinishedSpawningEnemies = true;
 
     }
 }
