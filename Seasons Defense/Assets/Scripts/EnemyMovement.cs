@@ -14,16 +14,8 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        //If the switchMovement is true it will move right
-        if (transform.position.x < 0)
-        {
-            _moveRight = true;
-        }
-        //If the switchMovement is false it will move left
-        else
-        {
-            _moveRight = false;
-        }
+        // Enemy will move right if it spawns on the left side of the screen
+        _moveRight = transform.position.x < 0 ? true : false;
     }
 
     void Update()
@@ -39,17 +31,10 @@ public class EnemyMovement : MonoBehaviour
             MoveEnemiesLeft();
         }
         
-        //If Postion x is greater than or equal to 11 it will change the switchMovement to false
-        if (transform.position.x >= rightPadding)
+        // If Position x is beyond the padding bounds, the enemy will be de-spawned
+        if (transform.position.x >= rightPadding || transform.position.x <= leftPadding)
         {
-            LevelManager.EnemiesCount--;
-            LevelManager.EnemyDestroyed();
-            Destroy(gameObject);
-        }
-        //If Postion x is less than or equal to negative 11 it will change the switchMovement to true
-        if (transform.position.x <= leftPadding)
-        {
-           
+            _moveRight = true;
             LevelManager.EnemiesCount--;
             LevelManager.EnemyDestroyed();
             Destroy(gameObject);
