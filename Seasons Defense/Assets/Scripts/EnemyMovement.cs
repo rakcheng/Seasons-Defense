@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,16 @@ public class EnemyMovement : MonoBehaviour
 {
     //The speed of the enemies
     public float speed = 5f;
-    public float rightPadding = 11f;
-    public float leftPadding = -11f;
+    public float rightPadding = 35f;
+    public float leftPadding = -35f;
     //To be able to switch direction from left to right or right to left
     private bool _moveRight = true;
+
+    void Start()
+    {
+        // Enemy will move right if it spawns on the left side of the screen
+        _moveRight = transform.position.x < 0 ? true : false;
+    }
 
     void Update()
     {
@@ -24,15 +31,12 @@ public class EnemyMovement : MonoBehaviour
             MoveEnemiesLeft();
         }
         
-        //If Postion x is greater than or equal to 11 it will change the switchMovement to false
-        if (transform.position.x >= rightPadding)
+        // If Position x is beyond the padding bounds, the enemy will be de-spawned
+        if (transform.position.x >= rightPadding || transform.position.x <= leftPadding)
         {
-            _moveRight = false;
-        }
-        //If Postion x is less than or equal to negative 11 it will change the switchMovement to true
-        if (transform.position.x <= leftPadding)
-        {
-            _moveRight = true;
+            LevelManager.EnemiesCount--;
+            LevelManager.EnemyDestroyed();
+            Destroy(gameObject);
         }
     }
     
