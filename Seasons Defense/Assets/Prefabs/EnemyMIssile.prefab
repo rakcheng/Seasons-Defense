@@ -121,3 +121,4 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3727858198622731275, guid: 2f7668d8cd54a6b489d7598ad514ac64, type: 3}
   target: {x: 0, y: 0, z: 0}
   speed: 2
+  worth: 25

@@ -45,6 +45,9 @@ public class Missile : MonoBehaviour
     // method called when a missile destroys this missile object
     public void BeingDestroyed()
     {
+        // In case of an enemy missile exploding a player's missile, we don't assign points or imply enemy destruction
+        if (CompareTag("Player")) return;
+        
         ScoreManager.Instance.AddPoints(worth);
         
         LevelManager.EnemyMissileCount--;
