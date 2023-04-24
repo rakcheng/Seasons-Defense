@@ -9,6 +9,9 @@ public class Missile : MonoBehaviour
     [HideInInspector]
     public Vector3 target;
     public int speed = 5;
+
+    // This worth is changed for the Enemy Missile prefab
+    public int worth = 0;
     
     private void Start()
     {
@@ -42,8 +45,11 @@ public class Missile : MonoBehaviour
     // method called when a missile destroys this missile object
     public void BeingDestroyed()
     {
+        ScoreManager.Instance.AddPoints(worth);
+        
         LevelManager.EnemyMissileCount--;
         LevelManager.EnemyDestroyed();
+        
         Explode();
     }
 }

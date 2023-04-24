@@ -8,8 +8,9 @@ public class Enemy : MonoBehaviour
 
     //Delay how fast the missiles Spawn
     public float delayMissileSpawn = 5f;
-
     public int enemyMissileCount = 3;
+
+    public int worth = 100;
     void Start()
     {
         StartCoroutine(SpawnEnemyMissile());
@@ -30,8 +31,11 @@ public class Enemy : MonoBehaviour
     // todo: add particle effects and/or animations to this method
     public void BeingDestroyed()
     {
+        ScoreManager.Instance.AddPoints(worth);
+        
         LevelManager.EnemiesCount--;
         LevelManager.EnemyDestroyed();
+        
         Destroy(gameObject);
     }
 }
