@@ -10,7 +10,7 @@ public class MenuController : MonoBehaviour
 
     public void Start()
     {
-        highScoreText.SetText("High Score: " + PlayerPrefs.GetInt("HighScore"));
+        highScoreText.SetText("High Score: " + PlayerPrefs.GetInt("HighScore", 0));
     }
 
     public void PlayButton()
