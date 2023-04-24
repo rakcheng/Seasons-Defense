@@ -6,33 +6,31 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance;
+    public static ScoreManager Instance;
     
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
 
-    int score = 0;
-    int highscore = 0;
+    private int _score = 0;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     void Start()
     {
-        highscore = PlayerPrefs.GetInt("highscore", 0);
-        scoreText.text = "SCORE: " + score.ToString();
-        highScoreText.text = "HIGHSCORE: " + highscore.ToString();
+        scoreText.text = "SCORE: " + _score;
+        highScoreText.text = "HIGHSCORE: " + PlayerPrefs.GetInt("HighScore", 0);
     }
 
     public void AddPoints(int points)
     {
-        score += points;
-        scoreText.text = "SCORE: " + score.ToString();
-        if (highscore < score)
+        _score += points;
+        scoreText.text = "SCORE: " + _score;
+        if (PlayerPrefs.GetInt("HighScore", 0) < _score)
         {
-            PlayerPrefs.SetInt("highscore", score);
+            PlayerPrefs.SetInt("HighScore", _score);
         }
     }
 }
