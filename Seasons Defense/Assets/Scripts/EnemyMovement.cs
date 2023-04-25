@@ -20,15 +20,13 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        //If the switchMovement is true it will move right
         if (_moveRight)
         {
-            MoveEnemiesRight();
+            MoveEnemyRight();
         }
-        //If the switchMovement is false it will move left
         else
         {
-            MoveEnemiesLeft();
+            MoveEnemyLeft();
         }
         
         // If Position x is beyond the padding bounds, the enemy will be de-spawned
@@ -40,12 +38,12 @@ public class EnemyMovement : MonoBehaviour
         }
     }
     
-    void MoveEnemiesLeft()
+    void MoveEnemyLeft()
     {
         transform.Translate(-speed*Time.deltaTime,0,0);
     }
 
-    void MoveEnemiesRight()
+    void MoveEnemyRight()
     {
         transform.Translate(speed*Time.deltaTime,0,0);
     }

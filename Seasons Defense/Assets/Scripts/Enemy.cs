@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
     {
         while (enemyMissileCount > 0)
         {
-            GameObject _missile = Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            _missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
+            GameObject missile = Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
             yield return new WaitForSeconds(delayMissileSpawn);
             enemyMissileCount--;
         }

@@ -24,15 +24,15 @@ public class TowerDecider : MonoBehaviour
     {
         // This can be more complex, but for the time being it works.
 
-        if(optimal.getMissileCount() > 0)
+        if(optimal.GetMissileCount() > 0)
         {
             optimal.Fire();
         }
-        else if(secondChoice.getMissileCount() > 0)
+        else if(secondChoice.GetMissileCount() > 0)
         {
             secondChoice.Fire();
         }
-        else if(lastChoice.getMissileCount() > 0)
+        else if(lastChoice.GetMissileCount() > 0)
         {
             lastChoice.Fire();
         }

@@ -8,10 +8,10 @@ public class Tower : MonoBehaviour
     public GameObject missilePrefab;
     public float offset;
     
-    private int missileCount = 5;
+    private int _missileCount = 5;
     private Vector3 _towerPosition;
 
-    public bool _disabled;
+    private bool _disabled;
     
     private void Start()
     {
@@ -23,9 +23,9 @@ public class Tower : MonoBehaviour
     public void Fire() {
 
         // a tower will only fire if their missile count is greater than 0
-        if (missileCount == 0) return;
+        if (_missileCount == 0) return;
 
-        missileCount--;
+        _missileCount--;
 
         Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z);
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -45,23 +45,23 @@ public class Tower : MonoBehaviour
 
 
     // Methods to set or get the missile count
-    public int getMissileCount()
+    public int GetMissileCount()
     {
-        return this.missileCount;
+        return _missileCount;
     }
 
     public void ReloadTower(int amount)
     {
-        this.missileCount += amount;
+        _missileCount += amount;
     }
 
-    public void disableTurret()
+    public void DisableTurret()
     {
         if (_disabled) return;
 
         _disabled = true;
         
-        this.missileCount = 0;
+        _missileCount = 0;
         
         LevelManager.Instance.towersCount--;
         LevelManager.Instance.BuildingDestroyed();
@@ -71,6 +71,6 @@ public class Tower : MonoBehaviour
     
     private void UpdateAmmoCount()
     {
-        ammoText.SetText("Ammo: " + missileCount);
+        ammoText.SetText("Ammo: " + _missileCount);
     }
 }
