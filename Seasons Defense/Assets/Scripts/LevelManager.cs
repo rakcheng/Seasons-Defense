@@ -4,31 +4,34 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static bool FinishedSpawningEnemies;
-    public static bool FinishedSpawningMissiles;
-    public static int EnemyMissileCount;
-    public static int EnemiesCount;
+    public static LevelManager Instance;
+    
+    public bool finishedSpawningEnemies;
+    public bool finishedSpawningMissiles;
+    public int enemyMissileCount;
+    public int enemiesCount;
 
     // todo: These values are hard initialized temporarily
-    public static int CitiesCount;
-    public static int TowersCount;
+    public int citiesCount;
+    public int towersCount;
 
-    private static bool _levelOver = false;
+    private bool _levelOver = false;
     
     /*
      * todo: add function to check for game-loss condition if the player runs out of ammo before end of level
      */
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        FinishedSpawningEnemies = false;
-        FinishedSpawningMissiles = false;
-        EnemyMissileCount = 0;
-        EnemiesCount = 0;
-
-        CitiesCount = 6;
-        TowersCount = 3;
+        Instance = this;
+        finishedSpawningEnemies = false;
+        finishedSpawningMissiles = false;
+        enemyMissileCount = 0;
+        enemiesCount = 0;
+        
+        citiesCount = 6;
+        towersCount = 3;
     }
 
     // Update is called once per frame
@@ -37,7 +40,7 @@ public class LevelManager : MonoBehaviour
         
     }
 
-    public static void EnemyDestroyed()
+    public void EnemyDestroyed()
     {
         Debug.Log("Enemy destroyed.");
         if (LevelCompleted() && !_levelOver)
@@ -47,8 +50,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public static void BuildingDestroyed()
-    {        
+    public void BuildingDestroyed()
+    {
         Debug.Log("Building destroyed.");
         if (LevelLost() && !_levelOver)
         {
@@ -58,14 +61,14 @@ public class LevelManager : MonoBehaviour
     }
 
     // Level is won on the condition that the enemy missiles and enemies have all been spawned and then destroyed
-    private static bool LevelCompleted()
+    private bool LevelCompleted()
     {
-        return FinishedSpawningEnemies && FinishedSpawningMissiles && EnemiesCount <= 0 && EnemyMissileCount <= 0;
+        return finishedSpawningEnemies && finishedSpawningMissiles && enemiesCount <= 0 && enemyMissileCount <= 0;
     }
 
     // Level is lost on the condition that either all towers or cities have been destroyed
-    private static bool LevelLost()
+    private bool LevelLost()
     {
-        return CitiesCount <= 0 || TowersCount <= 0;
+        return citiesCount <= 0 || towersCount <= 0;
     }
 }

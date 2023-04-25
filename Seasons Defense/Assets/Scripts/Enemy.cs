@@ -33,8 +33,8 @@ public class Enemy : MonoBehaviour
     {
         ScoreManager.Instance.AddPoints(worth);
         
-        LevelManager.EnemiesCount--;
-        LevelManager.EnemyDestroyed();
+        LevelManager.Instance.enemiesCount--;
+        LevelManager.Instance.EnemyDestroyed();
         
         Destroy(gameObject);
     }

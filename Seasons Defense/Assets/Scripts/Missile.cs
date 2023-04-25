@@ -50,8 +50,8 @@ public class Missile : MonoBehaviour
         
         ScoreManager.Instance.AddPoints(worth);
         
-        LevelManager.EnemyMissileCount--;
-        LevelManager.EnemyDestroyed();
+        LevelManager.Instance.enemyMissileCount--;
+        LevelManager.Instance.EnemyDestroyed();
         
         Explode();
     }

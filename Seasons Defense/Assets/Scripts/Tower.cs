@@ -63,8 +63,8 @@ public class Tower : MonoBehaviour
         
         this.missileCount = 0;
         
-        LevelManager.TowersCount--;
-        LevelManager.BuildingDestroyed();
+        LevelManager.Instance.towersCount--;
+        LevelManager.Instance.BuildingDestroyed();
         
         UpdateAmmoCount();
     }
