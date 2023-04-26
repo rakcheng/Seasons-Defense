@@ -34,7 +34,10 @@ public class Tower : MonoBehaviour
         _missileCount--;
         Missile missile = Instantiate(missilePrefab, _offsetFirePosition, Quaternion.identity).GetComponent<Missile>();
         
+        AudioManager.Instance.Play("MissileSound");
+        
         // Give the missile the attributes it needs to move towards its target position
+
         if (missile != null)
         {
             missile.target = hit.point;

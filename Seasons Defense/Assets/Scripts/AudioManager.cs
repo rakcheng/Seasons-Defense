@@ -3,10 +3,14 @@ using UnityEngine;
 using System;
 public class AudioManager : MonoBehaviour
 {
+
+    public static AudioManager Instance;
     public Audio[] sounds;
 
     private void Awake()
     {
+        Instance = this;
+      
         foreach (Audio s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -20,8 +24,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        // Here you play the backround song of the scene or the theme that will loop
-        // Play("Background Song");
+        
+        Play("FallTheme");
     }
 
     public void Play(string name)

@@ -13,6 +13,8 @@ public class Explosion : MonoBehaviour
         // Play the explosion animation
         animator.Play("ExplosionBlast");
 
+        AudioManager.Instance.Play("Explosion");
+
         //Destroy the object, following a timer
         Destroy(gameObject, timeToDestroy);
     }
