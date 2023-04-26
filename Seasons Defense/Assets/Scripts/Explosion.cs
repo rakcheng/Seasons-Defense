@@ -46,7 +46,7 @@ public class Explosion : MonoBehaviour
         // if a tower -> disable it 
         else if (obj.GetComponent<Tower>()) 
         {
-            obj.GetComponent<Tower>().disableTurret();
+            obj.GetComponent<Tower>().DisableTurret();
         }
         
         else if (obj.CompareTag("Enemy"))

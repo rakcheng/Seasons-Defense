@@ -10,7 +10,7 @@ public class MissileSpawner : MonoBehaviour
 
     //Delay how fast the missiles Spawn
     public float delayMissileSpawn = 5f;
-    public float enemyMissileCount = 10;
+    [FormerlySerializedAs("enemyMissileCount")] public float missilesToSpawn = 10;
 
     
     void Start()
@@ -18,23 +18,23 @@ public class MissileSpawner : MonoBehaviour
         StartCoroutine(SpawnMissiles(delayMissileSpawn, enemyMissilePrefab));
     }
 
-    private IEnumerator SpawnMissiles(float interval, GameObject missile)
+    private IEnumerator SpawnMissiles(float interval, GameObject missilePrefab)
     {
-        LevelManager.FinishedSpawningMissiles = false;
-        LevelManager.EnemyMissileCount = 0;
+        LevelManager.Instance.finishedSpawningMissiles = false;
+        LevelManager.Instance.enemyMissileCount = 0;
         
-        while (enemyMissileCount > 0)
+        while (missilesToSpawn > 0)
         {
-            LevelManager.EnemyMissileCount++;
+            LevelManager.Instance.enemyMissileCount++;
 
             //Chooses a random Spawn Point location for the enemy
             int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
-            GameObject _missile = Instantiate(missile, spawnLocations[randomSpawnPoint].position, Quaternion.identity);
-            _missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
+            GameObject missile = Instantiate(missilePrefab, spawnLocations[randomSpawnPoint].position, Quaternion.identity);
+            missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
             yield return new WaitForSeconds(interval);
-            enemyMissileCount--;
+            missilesToSpawn--;
         }
 
-        LevelManager.FinishedSpawningMissiles = true;
+        LevelManager.Instance.finishedSpawningMissiles = true;
     }
 }
