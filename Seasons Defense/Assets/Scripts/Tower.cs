@@ -9,14 +9,14 @@ public class Tower : MonoBehaviour
     public float offset;
     
     private int _missileCount = 5;
-    private Vector3 _towerPosition;
+    private Vector3 _offsetFirePosition;
 
     private bool _disabled;
     
     private void Start()
     {
         _disabled = false;
-        _towerPosition = new Vector3(transform.position.x, transform.position.y + offset, 0);
+        _offsetFirePosition = new Vector3(transform.position.x, transform.position.y + offset, 0);
         UpdateAmmoCount();
     }
 
@@ -25,19 +25,22 @@ public class Tower : MonoBehaviour
         // a tower will only fire if their missile count is greater than 0
         if (_missileCount == 0) return;
 
-        _missileCount--;
+        int layerMask = LayerMask.GetMask("TargetPlane");
 
-        Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z);
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        worldPosition.z = transform.position.z;
-        GameObject missileInstance = Instantiate(missilePrefab, _towerPosition, Quaternion.identity);
-      
-        // Give the missile the attributes it needs to move towards its target position
-        Missile missile = missileInstance.GetComponent<Missile>();
+        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+
+        if (!Physics.Raycast(ray, out RaycastHit hit, 100, layerMask)) return;
+
+        _missileCount--;
+        Missile missile = Instantiate(missilePrefab, _offsetFirePosition, Quaternion.identity).GetComponent<Missile>();
+        
         AudioManager.Instance.Play("MissileSound");
+        
+        // Give the missile the attributes it needs to move towards its target position
+
         if (missile != null)
         {
-            missile.target = worldPosition;
+            missile.target = hit.point;
         }
         
         UpdateAmmoCount();
