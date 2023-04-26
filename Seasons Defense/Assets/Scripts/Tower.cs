@@ -34,7 +34,7 @@ public class Tower : MonoBehaviour
       
         // Give the missile the attributes it needs to move towards its target position
         Missile missile = missileInstance.GetComponent<Missile>();
-
+        AudioManager.Instance.Play("MissileSound");
         if (missile != null)
         {
             missile.target = worldPosition;
