@@ -1666,6 +1666,69 @@ Transform:
   m_Father: {fileID: 1676470092}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1066277496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066277498}
+  - component: {fileID: 1066277497}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1066277497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066277496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a00cc8af2154a849aeea3b54c4e4ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Explosion
+    clip: {fileID: 8300000, guid: ae32b6e27436d3f4ab6316f5de7cd403, type: 3}
+    pitch: 0.7
+    volume: 2.51
+    loop: 0
+    source: {fileID: 0}
+  - name: MissileSound
+    clip: {fileID: 8300000, guid: 22b596fd67a835646a4a2dadf0918c05, type: 3}
+    pitch: 0.7
+    volume: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: FallTheme
+    clip: {fileID: 8300000, guid: 65016e00412abbd4d94add59a4c5e74d, type: 3}
+    pitch: 1
+    volume: 2.1
+    loop: 1
+    source: {fileID: 0}
+--- !u!4 &1066277498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066277496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4762221, y: 2.528125, z: -0.46527767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1112984427
 PrefabInstance:
   m_ObjectHideFlags: 0
