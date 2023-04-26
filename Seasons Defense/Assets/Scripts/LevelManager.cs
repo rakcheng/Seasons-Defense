@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+
+    // UI
+    [Header("UI elements")]
+    public GameObject gameOverUI;
     
+    // Level switching functionality
+    [Header("Level switching functionality")]
+    public GameObject sceneTransitionManager;
+    public string nextLevelSceneName;
+    public string mainMenuSceneName;
+
+    [Header("Game status variables")]
     public bool finishedSpawningEnemies;
     public bool finishedSpawningMissiles;
     public int enemyMissileCount;
@@ -40,6 +52,16 @@ public class LevelManager : MonoBehaviour
         
     }
 
+    public void ExitLevel()
+    {
+        sceneTransitionManager.GetComponent<SceneTransition>().FadeTo(mainMenuSceneName);
+    }
+
+    public void RetryLevel()
+    {
+        sceneTransitionManager.GetComponent<SceneTransition>().FadeTo(SceneManager.GetActiveScene().name);
+    }
+
     public void EnemyDestroyed()
     {
         Debug.Log("Enemy destroyed.");
@@ -56,6 +78,10 @@ public class LevelManager : MonoBehaviour
         if (LevelLost() && !_levelOver)
         {
             _levelOver = true;
+            
+            // Show the game over UI elements
+            gameOverUI.SetActive(true);
+            
             Debug.Log("Level lost!");
         }
     }
