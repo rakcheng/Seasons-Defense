@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI finalScoreText;
 
     private int _score = 0;
 
@@ -32,5 +33,10 @@ public class ScoreManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", _score);
         }
+    }
+
+    public void FinalScore()
+    {
+        finalScoreText.text = "FINAL SCORE: " + _score;
     }
 }

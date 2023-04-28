@@ -2463,6 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 261460462}
   highScoreText: {fileID: 1392592276}
+  finalScoreText: {fileID: 452511258}
 --- !u!114 &1224537654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4363,7 +4364,7 @@ MonoBehaviour:
   - {fileID: 89345545}
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
   delayMissileSpawn: 1
-  missilesToSpawn: 20
+  missilesToSpawn: 10
 --- !u!4 &2071869498
 Transform:
   m_ObjectHideFlags: 0

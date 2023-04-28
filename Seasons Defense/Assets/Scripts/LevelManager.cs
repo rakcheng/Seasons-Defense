@@ -69,6 +69,7 @@ public class LevelManager : MonoBehaviour
         {
             _levelOver = true;
             Debug.Log("Level won!");
+            
         }
     }
 
@@ -81,6 +82,7 @@ public class LevelManager : MonoBehaviour
             
             // Show the game over UI elements
             gameOverUI.SetActive(true);
+            ScoreManager.Instance.FinalScore();
             
             Debug.Log("Level lost!");
         }
