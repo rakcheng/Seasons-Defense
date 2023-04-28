@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5632257105767273971}
   - component: {fileID: 5879512044964775243}
   - component: {fileID: 627925287929554765}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlaneBomber
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -139,3 +139,4 @@ MonoBehaviour:
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
   delayMissileSpawn: 5
   enemyMissileCount: 3
+  worth: 100

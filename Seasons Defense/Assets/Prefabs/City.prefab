@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 920492168198374160}
   - component: {fileID: 6879751613870168702}
   - component: {fileID: -3808227869007602897}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: City
   m_TagString: Civilization
   m_Icon: {fileID: 0}

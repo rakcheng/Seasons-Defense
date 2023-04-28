@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5543889563705119543}
   - component: {fileID: -1014931845788958072}
   - component: {fileID: -6886598798259333277}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Satellite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
   delayMissileSpawn: 5
   enemyMissileCount: 3
+  worth: 100
