@@ -60,7 +60,6 @@ public class Explosion : MonoBehaviour
         {
             obj.GetComponent<City>().BeingDestroyed();
         }
-
         // For right now, everything else gets destroyed
         // Destroy(obj);
 

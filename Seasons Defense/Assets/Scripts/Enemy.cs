@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
         {
             GameObject missile = Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
+            //Increments Enemy Missile count when Spawned by enemy.
+            LevelManager.Instance.enemyMissileCount++;
             yield return new WaitForSeconds(delayMissileSpawn);
             enemyMissileCount--;
         }
