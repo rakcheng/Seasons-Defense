@@ -22,43 +22,40 @@ public class Explosion : MonoBehaviour
     private void FixedUpdate()
     {
         // Stores every thing that the ray has hit within the radius of the explosion
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, transform.localScale.x, transform.up, 1);
 
-        // iterates through every hit within the explosion max radius
-        foreach (RaycastHit hit in hits)
+        // The 1 << 7 is the layer mask that only checks for other objects in that layer
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, transform.localScale.x, 1 << 7);
+
+        foreach (var hit in hitColliders)
         {
-            // If statement is there so that the animation isn't taken into consideration
-            if (hit.collider.gameObject.name != "BlastSphere")
-                ParseObjectHit(hit);
+            Debug.Log("Hit" + hit);
+            ParseObjectHit(hit.gameObject);
         }
     }
 
-
     // Here is the method where we could parse through the different objects that get hit by the explosion
-    private void ParseObjectHit(RaycastHit hit)
+    private void ParseObjectHit(GameObject hit)
     {
-        GameObject obj = hit.collider.gameObject;
-
         // If the hit is a player missile call to have it exploded then destroyed
-        if (obj.GetComponent<Missile>())
+        if (hit.GetComponent<Missile>())
         {
-            obj.GetComponent<Missile>().BeingDestroyed();
+            hit.GetComponent<Missile>().BeingDestroyed();
         }
-        
+
         // if a tower -> disable it 
-        else if (obj.GetComponent<Tower>()) 
+        else if (hit.GetComponent<Tower>())
         {
-            obj.GetComponent<Tower>().DisableTurret();
+            hit.GetComponent<Tower>().DisableTurret();
         }
-        
-        else if (obj.CompareTag("Enemy"))
+
+        else if (hit.CompareTag("Enemy"))
         {
-            obj.GetComponent<Enemy>().BeingDestroyed();
+            hit.GetComponent<Enemy>().BeingDestroyed();
         }
-        
-        else if (obj.GetComponent<City>())
+
+        else if (hit.GetComponent<City>())
         {
-            obj.GetComponent<City>().BeingDestroyed();
+            hit.GetComponent<City>().BeingDestroyed();
         }
 
         // For right now, everything else gets destroyed
@@ -73,5 +70,3 @@ public class Explosion : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, transform.localScale.x);
     }
 }
-
-
