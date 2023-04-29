@@ -1276,7 +1276,7 @@ Transform:
   m_GameObject: {fileID: 754044044}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 4.11, z: 0}
-  m_LocalScale: {x: 3.82, y: 1, z: 2.16}
+  m_LocalScale: {x: 3.122096, y: 1, z: 2.1330218}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1935,6 +1935,7 @@ MonoBehaviour:
   leftTower: {fileID: 2019782466}
   middleTower: {fileID: 1996822092}
   rightTower: {fileID: 1632961161}
+  plane: {fileID: 754044044}
 --- !u!4 &1028136842
 Transform:
   m_ObjectHideFlags: 0

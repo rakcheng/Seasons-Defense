@@ -20,16 +20,10 @@ public class Tower : MonoBehaviour
         UpdateAmmoCount();
     }
 
-    public void Fire() {
+    public void Fire(Vector3 targetPoint) {
 
         // a tower will only fire if their missile count is greater than 0
         if (_missileCount == 0) return;
-
-        int layerMask = LayerMask.GetMask("TargetPlane");
-
-        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-
-        if (!Physics.Raycast(ray, out RaycastHit hit, 100, layerMask)) return;
 
         _missileCount--;
         Missile missile = Instantiate(missilePrefab, _offsetFirePosition, Quaternion.identity).GetComponent<Missile>();
@@ -40,7 +34,7 @@ public class Tower : MonoBehaviour
 
         if (missile != null)
         {
-            missile.target = hit.point;
+            missile.target = targetPoint;
         }
         
         UpdateAmmoCount();
