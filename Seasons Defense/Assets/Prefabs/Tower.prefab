@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6842859227079767670}
   - component: {fileID: 3891522195061932395}
   - component: {fileID: 1263134362121516258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7218082349749678885}
   - component: {fileID: 2571310078199861050}
   - component: {fileID: 2792808870307131134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 8276214724087351701}
   - component: {fileID: 5566736873279008304}
   - component: {fileID: 7712234007568068131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 3280230657681862954}
   - component: {fileID: 2033145762938056449}
   - component: {fileID: 2325473649905117365}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
