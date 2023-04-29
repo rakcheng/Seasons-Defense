@@ -4270,6 +4270,7 @@ MonoBehaviour:
   enemiesCount: 0
   citiesCount: 0
   towersCount: 0
+  gameOver: 0
 --- !u!114 &2115744652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4284,6 +4285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1199271540}
   highScoreText: {fileID: 588423374}
+  finalScoreText: {fileID: 1752276893}
 --- !u!114 &2115744653
 MonoBehaviour:
   m_ObjectHideFlags: 0
