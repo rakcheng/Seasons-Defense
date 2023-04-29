@@ -7,15 +7,17 @@ public class EnemyMovement : MonoBehaviour
 {
     //The speed of the enemies
     public float speed = 5f;
-    public float rightPadding = 35f;
-    public float leftPadding = -35f;
+    
+    private const float RightPadding = 20f;
+    private const float LeftPadding = -20f;
+    
     //To be able to switch direction from left to right or right to left
     private bool _moveRight = true;
 
     void Start()
     {
         // Enemy will move right if it spawns on the left side of the screen
-        _moveRight = transform.position.x < 0 ? true : false;
+        _moveRight = transform.position.x < 0;
     }
 
     void Update()
@@ -30,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         }
         
         // If Position x is beyond the padding bounds, the enemy will be de-spawned
-        if (transform.position.x >= rightPadding || transform.position.x <= leftPadding)
+        if (transform.position.x >= RightPadding || transform.position.x <= LeftPadding)
         {
             LevelManager.Instance.enemiesCount--;
             LevelManager.Instance.EnemyDestroyed();
