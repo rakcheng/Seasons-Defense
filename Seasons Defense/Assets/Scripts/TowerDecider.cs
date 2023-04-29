@@ -10,8 +10,10 @@ public class TowerDecider : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        
+        if(Input.GetMouseButtonDown(0) && !LevelManager.Instance.gameOver)
         {
+            Debug.Log("Firing...");
             float xPosOnClick = Input.mousePosition.x;
 
             if (xPosOnClick < _third) TowerToShoot(leftTower, middleTower, rightTower);

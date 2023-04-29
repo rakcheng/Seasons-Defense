@@ -27,6 +27,9 @@ public class LevelManager : MonoBehaviour
     public int citiesCount;
     public int towersCount;
 
+    [HideInInspector]
+    public bool gameOver = false;
+
     private bool _levelOver = false;
     
     /*
@@ -78,6 +81,7 @@ public class LevelManager : MonoBehaviour
         if (LevelLost() && !_levelOver)
         {
             _levelOver = true;
+            gameOver = true;
             
             // Show the game over UI elements
             gameOverUI.SetActive(true);
