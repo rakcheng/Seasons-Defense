@@ -33,6 +33,12 @@ public class Missile : MonoBehaviour
         // Creates an explosion object at missile's location
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
+        if (!CompareTag("Player"))
+        {
+            LevelManager.Instance.enemyMissileCount--;
+            LevelManager.Instance.EnemyDestroyed();
+        }
+
         // Missile is no longer needed
         Destroy(gameObject);
     }
@@ -45,14 +51,12 @@ public class Missile : MonoBehaviour
     // method called when a missile destroys this missile object
     public void BeingDestroyed()
     {
-        // In case of an enemy missile exploding a player's missile, we don't assign points or imply enemy destruction
-        if (CompareTag("Player")) return;
-        
-        ScoreManager.Instance.AddPoints(worth);
-        
-        LevelManager.Instance.enemyMissileCount--;
-        LevelManager.Instance.EnemyDestroyed();
-        
+        // In case of any missile exploding a player's missile, we don't assign points or imply enemy destruction
+        if (!CompareTag("Player"))
+        {
+            ScoreManager.Instance.AddPoints(worth);
+        }
+
         Explode();
     }
 }
