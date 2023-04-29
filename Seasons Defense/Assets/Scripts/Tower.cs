@@ -62,15 +62,22 @@ public class Tower : MonoBehaviour
     {
         if (_disabled) return;
 
+        GetComponent<Collider>().enabled = false;
         _disabled = true;
-        
         _missileCount = 0;
+
         
         LevelManager.Instance.towersCount--;
         LevelManager.Instance.BuildingDestroyed();
         
         UpdateAmmoCount();
     }
+
+    public void EnableTower()
+    {
+        // TODO: enables tower for the next wave.
+    }
+
     
     private void UpdateAmmoCount()
     {
