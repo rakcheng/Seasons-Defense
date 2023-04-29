@@ -85,6 +85,7 @@ public class LevelManager : MonoBehaviour
             
             // Show the game over UI elements
             gameOverUI.SetActive(true);
+            ScoreManager.Instance.FinalScore();
             
             Debug.Log("Level lost!");
         }
