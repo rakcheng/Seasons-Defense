@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TowerDecider : MonoBehaviour
@@ -6,37 +7,60 @@ public class TowerDecider : MonoBehaviour
     public Tower middleTower;
     public Tower rightTower;
 
-    private float _third = Screen.width / 3f;
+    public GameObject plane;
+
+    private float _sixthX;
+
+    private void Start()
+    {
+        _sixthX = plane.GetComponent<Renderer>().bounds.extents.x / 6.0f * plane.transform.localScale.x;
+    }
 
     private void Update()
     {
-        
-        if(Input.GetMouseButtonDown(0) && !LevelManager.Instance.gameOver)
-        {
-            Debug.Log("Firing...");
-            float xPosOnClick = Input.mousePosition.x;
 
-            if (xPosOnClick < _third) TowerToShoot(leftTower, middleTower, rightTower);
-            else if (xPosOnClick > _third && xPosOnClick < (_third * 2f)) TowerToShoot(middleTower, leftTower, rightTower);
-            else TowerToShoot(rightTower, middleTower, leftTower);
+        if (LevelManager.Instance.gameOver)
+            return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            int layerMask = LayerMask.GetMask("TargetPlane");
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
+            if (!Physics.Raycast(ray, out RaycastHit hit, 100, layerMask)) return;
+            
+            Debug.Log("Firing...");
+            float planeHitX = hit.point.x;
+
+            if (planeHitX <= -_sixthX)
+                TowerToShoot(leftTower, middleTower, rightTower, hit.point);
+            
+            else if (planeHitX >= -_sixthX && planeHitX < _sixthX)
+                TowerToShoot(middleTower, leftTower, rightTower, hit.point);
+            
+            else 
+                TowerToShoot(rightTower, middleTower, leftTower, hit.point);
+
+            
         }
+
     }
 
-    public void TowerToShoot(Tower optimal, Tower secondChoice, Tower lastChoice)
+    private void TowerToShoot(Tower optimal, Tower secondChoice, Tower lastChoice, Vector3 targetPoint)
     {
         // This can be more complex, but for the time being it works.
 
         if(optimal.GetMissileCount() > 0)
         {
-            optimal.Fire();
+            optimal.Fire(targetPoint);
         }
         else if(secondChoice.GetMissileCount() > 0)
         {
-            secondChoice.Fire();
+            secondChoice.Fire(targetPoint);
         }
         else if(lastChoice.GetMissileCount() > 0)
         {
-            lastChoice.Fire();
+            lastChoice.Fire(targetPoint);
         }
     }
 
