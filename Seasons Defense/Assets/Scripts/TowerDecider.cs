@@ -14,6 +14,7 @@ public class TowerDecider : MonoBehaviour
     private void Start()
     {
         _sixthX = plane.GetComponent<Renderer>().bounds.extents.x / 6.0f * plane.transform.localScale.x;
+        Debug.Log(_sixthX);
     }
 
     private void Update()
@@ -29,8 +30,8 @@ public class TowerDecider : MonoBehaviour
             
             if (!Physics.Raycast(ray, out RaycastHit hit, 100, layerMask)) return;
             
-            Debug.Log("Firing...");
             float planeHitX = hit.point.x;
+            Debug.Log($"Firing... X={planeHitX}");
 
             if (planeHitX <= -_sixthX)
                 TowerToShoot(leftTower, middleTower, rightTower, hit.point);
