@@ -7,14 +7,17 @@ public class TowerDecider : MonoBehaviour
     public Tower middleTower;
     public Tower rightTower;
 
+    [Header("Targeting")]
     public GameObject plane;
 
-    private float _sixthX;
+    public float targetingBias = -0.5f;
+
+    private float _forthX;
 
     private void Start()
     {
-        _sixthX = plane.GetComponent<Renderer>().bounds.extents.x / 6.0f * plane.transform.localScale.x;
-        Debug.Log(_sixthX);
+        _forthX = plane.GetComponent<Renderer>().bounds.size.x / 4.0f + targetingBias;
+        // Debug.Log(_forthX);
     }
 
     private void Update()
@@ -31,12 +34,12 @@ public class TowerDecider : MonoBehaviour
             if (!Physics.Raycast(ray, out RaycastHit hit, 100, layerMask)) return;
             
             float planeHitX = hit.point.x;
-            Debug.Log($"Firing... X={planeHitX}");
+            // Debug.Log($"Firing... X={planeHitX}");
 
-            if (planeHitX <= -_sixthX)
+            if (planeHitX <= -_forthX)
                 TowerToShoot(leftTower, middleTower, rightTower, hit.point);
             
-            else if (planeHitX >= -_sixthX && planeHitX < _sixthX)
+            else if (planeHitX >= -_forthX && planeHitX < _forthX)
                 TowerToShoot(middleTower, leftTower, rightTower, hit.point);
             
             else 
