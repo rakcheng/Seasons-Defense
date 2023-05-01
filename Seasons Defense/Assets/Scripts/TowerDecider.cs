@@ -6,7 +6,7 @@ public class TowerDecider : MonoBehaviour
     public Tower leftTower;
     public Tower middleTower;
     public Tower rightTower;
-
+    
     [Header("Targeting")]
     public GameObject plane;
 
@@ -66,6 +66,11 @@ public class TowerDecider : MonoBehaviour
         {
             lastChoice.Fire(targetPoint);
         }
+    }
+
+    public int GetTotalAmmo()
+    {
+        return rightTower.GetMissileCount() + middleTower.GetMissileCount() + leftTower.GetMissileCount();
     }
 
 }

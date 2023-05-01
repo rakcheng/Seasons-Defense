@@ -21,6 +21,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        _score = PlayerPrefs.GetInt("Score", 0);
         scoreText.text = "SCORE: " + _score;
         highScoreText.text = "HIGHSCORE: " + PlayerPrefs.GetInt("HighScore", 0);
     }
@@ -28,6 +29,7 @@ public class ScoreManager : MonoBehaviour
     public void AddPoints(int points)
     {
         _score += points;
+        PlayerPrefs.SetInt("Score", _score);
         scoreText.text = "SCORE: " + _score;
         if (PlayerPrefs.GetInt("HighScore", 0) < _score)
         {
@@ -38,5 +40,6 @@ public class ScoreManager : MonoBehaviour
     public void FinalScore()
     {
         finalScoreText.text = "FINAL SCORE: " + _score;
+        PlayerPrefs.SetInt("Score", 0);
     }
 }

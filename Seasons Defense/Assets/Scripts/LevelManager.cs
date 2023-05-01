@@ -22,10 +22,15 @@ public class LevelManager : MonoBehaviour
     public bool finishedSpawningMissiles;
     public int enemyMissileCount;
     public int enemiesCount;
-
     // todo: These values are hard initialized temporarily
     public int citiesCount;
     public int towersCount;
+    
+    [Header("End of Level Points")]
+    public int cityWorth = 100;
+    public int ammoWorth = 5;
+
+    public TowerDecider towerDecider;
 
     [HideInInspector]
     public bool gameOver = false;
@@ -72,6 +77,8 @@ public class LevelManager : MonoBehaviour
         {
             _levelOver = true;
             Debug.Log("Level won!");
+            NextLevel();
+            Debug.Log("Total Score " + ScoreManager.Instance.scoreText.text);
         }
     }
 
@@ -101,5 +108,22 @@ public class LevelManager : MonoBehaviour
     private bool LevelLost()
     {
         return citiesCount <= 0 || towersCount <= 0;
+    }
+
+    public void NextLevel()
+    {
+        CitySurvivedPoints();
+        AmmoUnusedPoints();
+        sceneTransitionManager.GetComponent<SceneTransition>().FadeTo(nextLevelSceneName);
+    }
+
+    private void CitySurvivedPoints()
+    {
+        ScoreManager.Instance.AddPoints(cityWorth * citiesCount);
+    }
+
+    private void AmmoUnusedPoints()
+    {
+        ScoreManager.Instance.AddPoints(ammoWorth * towerDecider.GetTotalAmmo());
     }
 }
