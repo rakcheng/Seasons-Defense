@@ -77,7 +77,7 @@ public class LevelManager : MonoBehaviour
         {
             _levelOver = true;
             Debug.Log("Level won!");
-            NextLevel();
+            sceneTransitionManager.GetComponent<FallTransitionHandler>().StartTransition();
             Debug.Log("Total Score " + ScoreManager.Instance.scoreText.text);
         }
     }
