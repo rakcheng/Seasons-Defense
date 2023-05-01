@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  _multiplier: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!114 &627925287929554765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +139,4 @@ MonoBehaviour:
   delayMissileSpawn: 5
   enemyMissileCount: 3
   worth: 100
+  _multiplier: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}

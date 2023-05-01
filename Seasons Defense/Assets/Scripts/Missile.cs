@@ -13,6 +13,10 @@ public class Missile : MonoBehaviour
     // This worth is changed for the Enemy Missile prefab
     public int worth = 0;
     
+    [SerializeField]
+    private GameSO _multiplier;
+
+    
     private void Start()
     {
         transform.LookAt(target);
@@ -20,7 +24,7 @@ public class Missile : MonoBehaviour
     private void Update()
     {
         // Missile position will keep updating as it moves towards its target
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target, (speed * _multiplier.SpeedMultiplier) * Time.deltaTime);
         if (transform.position == target) Explode();
     }
 
@@ -54,7 +58,7 @@ public class Missile : MonoBehaviour
         // In case of any missile exploding a player's missile, we don't assign points or imply enemy destruction
         if (!CompareTag("Player"))
         {
-            ScoreManager.Instance.AddPoints(worth);
+            ScoreManager.Instance.AddPoints(worth * _multiplier.ScoreMultiplier);
         }
 
         Explode();
