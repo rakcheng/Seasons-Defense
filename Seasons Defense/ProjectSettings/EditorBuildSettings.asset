@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/DoNotEditMe.unity
     guid: 10eb8cecf62688940a0dd816828ffd10
+  - enabled: 1
+    path: Assets/Scenes/Main/FallScene.unity
+    guid: d53f8633937e089429880822173742db
   m_configObjects: {}

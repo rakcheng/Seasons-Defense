@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23850633}
   - component: {fileID: 23850634}
+  - component: {fileID: 23850635}
   m_Layer: 0
   m_Name: CandleLight (2)
   m_TagString: Untagged
@@ -248,6 +249,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &23850635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23850632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &24009496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403129847}
   - component: {fileID: 403129848}
+  - component: {fileID: 403129849}
   m_Layer: 0
   m_Name: PumpkinLight (1)
   m_TagString: Untagged
@@ -2166,6 +2191,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &403129849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403129846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!4 &406801389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 808376216903838398, guid: dce89cb9f874bbb4ca1d87d699e86d59, type: 3}
@@ -4436,6 +4484,7 @@ MonoBehaviour:
   middleTower: {fileID: 1302933914}
   rightTower: {fileID: 972545475}
   plane: {fileID: 569728849}
+  targetingBias: -0.5
 --- !u!4 &794646334
 Transform:
   m_ObjectHideFlags: 0
@@ -4870,6 +4919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 920021374}
   - component: {fileID: 920021375}
+  - component: {fileID: 920021376}
   m_Layer: 0
   m_Name: CandleLight
   m_TagString: Untagged
@@ -4954,6 +5004,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &920021376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920021373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &935596794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6677,12 +6750,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1054568456}
   sceneTransitionManager: {fileID: 2079735646}
-  nextLevelSceneName: DoNotEditMe
+  nextLevelSceneName: FallScene
   mainMenuSceneName: MainMenu
   finishedSpawningEnemies: 0
   finishedSpawningMissiles: 0
   enemyMissileCount: 0
   enemiesCount: 0
+  cityWorth: 100
+  ammoWorth: 5
+  towerDecider: {fileID: 794646333}
   citiesCount: 0
   towersCount: 0
   gameOver: 0
@@ -6810,6 +6886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283728078}
   - component: {fileID: 1283728079}
+  - component: {fileID: 1283728080}
   m_Layer: 0
   m_Name: PumpkinLight
   m_TagString: Untagged
@@ -6894,6 +6971,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1283728080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283728077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &1302933913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7578,6 +7678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1374335172}
   - component: {fileID: 1374335173}
+  - component: {fileID: 1374335174}
   m_Layer: 0
   m_Name: LanternLight
   m_TagString: Untagged
@@ -7662,6 +7763,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1374335174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374335171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1446059555
 GameObject:
   m_ObjectHideFlags: 0
@@ -7789,6 +7913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475050311}
   - component: {fileID: 1475050312}
+  - component: {fileID: 1475050313}
   m_Layer: 0
   m_Name: CandleLight (1)
   m_TagString: Untagged
@@ -7873,6 +7998,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1475050313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475050310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &1496182376
 PrefabInstance:
   m_ObjectHideFlags: 0
