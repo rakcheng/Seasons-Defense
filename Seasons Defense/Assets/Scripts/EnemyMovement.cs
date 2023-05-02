@@ -13,6 +13,9 @@ public class EnemyMovement : MonoBehaviour
     
     //To be able to switch direction from left to right or right to left
     private bool _moveRight = true;
+    
+    [SerializeField]
+    private GameSO _multiplier;
 
     void Start()
     {
@@ -42,11 +45,11 @@ public class EnemyMovement : MonoBehaviour
     
     void MoveEnemyLeft()
     {
-        transform.Translate(-speed*Time.deltaTime,0,0);
+        transform.Translate((-speed * _multiplier.SpeedMultiplier)*Time.deltaTime,0,0);
     }
 
     void MoveEnemyRight()
     {
-        transform.Translate(speed*Time.deltaTime,0,0);
+        transform.Translate((speed * _multiplier.SpeedMultiplier)*Time.deltaTime,0,0);
     }
 }

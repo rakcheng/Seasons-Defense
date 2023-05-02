@@ -36,6 +36,11 @@ public class LevelManager : MonoBehaviour
     public bool gameOver = false;
 
     private bool _levelOver = false;
+
+    [SerializeField]
+    private GameSO _multiplier;
+
+    
     
     /*
      * todo: add function to check for game-loss condition if the player runs out of ammo before end of level
@@ -114,6 +119,8 @@ public class LevelManager : MonoBehaviour
     {
         CitySurvivedPoints();
         AmmoUnusedPoints();
+        _multiplier.SpeedMultiplier += 0.5f;
+        _multiplier.ScoreMultiplier += 1;
         sceneTransitionManager.GetComponent<SceneTransition>().FadeTo(nextLevelSceneName);
     }
 

@@ -1582,6 +1582,7 @@ MonoBehaviour:
   sceneTransitionManager: {fileID: 124037213056312563}
   playButtonLeadsTo: FallScene
   highScoreText: {fileID: 355652818}
+  _multiplier: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!4 &1891177903
 Transform:
   m_ObjectHideFlags: 0
