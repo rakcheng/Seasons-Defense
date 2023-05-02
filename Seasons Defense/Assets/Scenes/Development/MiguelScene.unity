@@ -2333,8 +2333,7 @@ MonoBehaviour:
   - {fileID: 49866882}
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
   delayMissileSpawn: 1
-  missilesToSpawn: 5
-  missilesAtStart: 0
+  missilesToSpawn: 3
 --- !u!4 &1077151216
 Transform:
   m_ObjectHideFlags: 0
