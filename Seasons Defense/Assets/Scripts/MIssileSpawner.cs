@@ -9,32 +9,47 @@ public class MissileSpawner : MonoBehaviour
     public GameObject enemyMissilePrefab;
 
     //Delay how fast the missiles Spawn
-    public float delayMissileSpawn = 5f;
-    [FormerlySerializedAs("enemyMissileCount")] public float missilesToSpawn = 10;
-
+    public float delayMissileSpawn = 0f;
+    [FormerlySerializedAs("enemyMissileCount")] 
+    public float missilesToSpawn = 2;
+    private float _missilesAtStart;
+    private int _waveCount = 3;
     
+
     void Start()
     {
+        _missilesAtStart = missilesToSpawn;
         StartCoroutine(SpawnMissiles(delayMissileSpawn, enemyMissilePrefab));
     }
 
     private IEnumerator SpawnMissiles(float interval, GameObject missilePrefab)
     {
+
         LevelManager.Instance.finishedSpawningMissiles = false;
         LevelManager.Instance.enemyMissileCount = 0;
         
-        while (missilesToSpawn > 0)
+        while (_waveCount > 0)
         {
-            LevelManager.Instance.enemyMissileCount++;
-
-            //Chooses a random Spawn Point location for the enemy
-            int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
-            GameObject missile = Instantiate(missilePrefab, spawnLocations[randomSpawnPoint].position, Quaternion.identity);
-            missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
-            yield return new WaitForSeconds(interval);
-            missilesToSpawn--;
+            _waveCount--;
+            while (missilesToSpawn > 0)
+            {
+                LevelManager.Instance.enemyMissileCount++;
+                //Chooses a random Spawn Point location for the enemy
+                int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
+                GameObject missile = Instantiate(missilePrefab, spawnLocations[randomSpawnPoint].position, Quaternion.identity);
+                missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
+                yield return new WaitForSeconds(interval);
+                missilesToSpawn--;
+            }
+            
+            missilesToSpawn = ++_missilesAtStart;
+            yield return new WaitForSeconds(7);
         }
 
+        
         LevelManager.Instance.finishedSpawningMissiles = true;
+
+        
     }
+
 }
