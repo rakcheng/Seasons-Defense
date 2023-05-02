@@ -12,13 +12,13 @@ public class MissileSpawner : MonoBehaviour
     public float delayMissileSpawn = 0f;
     [FormerlySerializedAs("enemyMissileCount")] 
     public float missilesToSpawn = 2;
-    private float missilesAtStart;
-    private int waveCount = 3;
+    private float _missilesAtStart;
+    private int _waveCount = 3;
     
 
     void Start()
     {
-        missilesAtStart = missilesToSpawn;
+        _missilesAtStart = missilesToSpawn;
         StartCoroutine(SpawnMissiles(delayMissileSpawn, enemyMissilePrefab));
     }
 
@@ -27,11 +27,10 @@ public class MissileSpawner : MonoBehaviour
 
         LevelManager.Instance.finishedSpawningMissiles = false;
         LevelManager.Instance.enemyMissileCount = 0;
-
-
-        while (waveCount > 0)
+        
+        while (_waveCount > 0)
         {
-            waveCount--;
+            _waveCount--;
             while (missilesToSpawn > 0)
             {
                 LevelManager.Instance.enemyMissileCount++;
@@ -42,10 +41,9 @@ public class MissileSpawner : MonoBehaviour
                 yield return new WaitForSeconds(interval);
                 missilesToSpawn--;
             }
-
-            missilesToSpawn = missilesAtStart++;
+            
+            missilesToSpawn = ++_missilesAtStart;
             yield return new WaitForSeconds(7);
-
         }
 
         
