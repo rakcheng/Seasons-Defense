@@ -119,7 +119,7 @@ public class LevelManager : MonoBehaviour
     {
         CitySurvivedPoints();
         AmmoUnusedPoints();
-        _multiplier.SpeedMultiplier += 1f;
+        _multiplier.SpeedMultiplier += 0.5f;
         _multiplier.ScoreMultiplier += 1;
         sceneTransitionManager.GetComponent<SceneTransition>().FadeTo(nextLevelSceneName);
     }

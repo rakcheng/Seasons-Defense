@@ -10,13 +10,13 @@ public class GameSO : ScriptableObject
 
     public int ScoreMultiplier
     {
-        get { return scoreMultiplier; }
-        set { scoreMultiplier = value;  }
+        get => scoreMultiplier;
+        set => scoreMultiplier = value;
     }
     
     public float SpeedMultiplier
     {
-        get { return speedMultiplier; }
-        set { speedMultiplier = value;  }
+        get => speedMultiplier;
+        set => speedMultiplier = value;
     }
 }
