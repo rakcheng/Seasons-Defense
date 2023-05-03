@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f2e40d96d54734784f95564ad45002, type: 3}
   m_Name: GameMultiplierSO
   m_EditorClassIdentifier: 
-  _speedMultiplier: 5
-  _scoreMultiplier: 5
+  speedMultiplier: 1
+  scoreMultiplier: 1
