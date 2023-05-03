@@ -45,7 +45,7 @@ public class MissileSpawner : MonoBehaviour
             }
             
             missilesToSpawn = ++_missilesAtStart;
-            yield return new WaitForSeconds(7);
+            if (waveCount > 0) yield return new WaitForSeconds(7);
         }
 
         

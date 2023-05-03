@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -6,27 +7,36 @@ public class Tower : MonoBehaviour
     public TextMeshProUGUI ammoText;
     
     public GameObject missilePrefab;
-    public float offset;
+    public GameObject firePositionGameObject;
+    public GameObject rotatePositionGameObject;
     
     private int _missileCount = 10;
-    private Vector3 _offsetFirePosition;
-
+    private Vector3 _targetPosition;
+    private bool _targeting;
     private bool _disabled;
-    
+
     private void Start()
     {
         _disabled = false;
-        _offsetFirePosition = new Vector3(transform.position.x, transform.position.y + offset, 0);
+        _targeting = false;
         UpdateAmmoCount();
+    }
+
+    private void Update()
+    {
+        LookAtTarget();
     }
 
     public void Fire(Vector3 targetPoint) {
 
         // a tower will only fire if their missile count is greater than 0
         if (_missileCount == 0) return;
+        
+        _targetPosition = targetPoint;
+        _targeting = true;
 
         _missileCount--;
-        Missile missile = Instantiate(missilePrefab, _offsetFirePosition, Quaternion.identity).GetComponent<Missile>();
+        Missile missile = Instantiate(missilePrefab, firePositionGameObject.transform.position, Quaternion.identity).GetComponent<Missile>();
         
         AudioManager.Instance.Play("MissileSound");
         
@@ -58,6 +68,7 @@ public class Tower : MonoBehaviour
 
         GetComponent<Collider>().enabled = false;
         _disabled = true;
+        _targeting = false;
         _missileCount = 0;
 
         
@@ -76,5 +87,19 @@ public class Tower : MonoBehaviour
     private void UpdateAmmoCount()
     {
         ammoText.SetText("Ammo: " + _missileCount);
+    }
+
+    private void LookAtTarget()
+    {
+        if (!_targeting)
+            return;
+        
+        // rotatePositionGameObject.transform.LookAt(_targetPosition);
+        Vector3 dir = _targetPosition - rotatePositionGameObject.transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir, rotatePositionGameObject.transform.up);
+        Vector3 rotation = Quaternion.Lerp(rotatePositionGameObject.transform.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
+        rotatePositionGameObject.transform.rotation = rotatePositionGameObject.transform.position.x > _targetPosition.x ? 
+            Quaternion.Euler(180 - rotation.x, 90f , 0f) : 
+            Quaternion.Euler(rotation.x, 90f , 0f);
     }
 }

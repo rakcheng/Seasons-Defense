@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             enemyCount = ++_enemyAtStart;
-            yield return new WaitForSeconds(6);
+            if (waveCount > 0) yield return new WaitForSeconds(6);
         }
 
         LevelManager.Instance.finishedSpawningEnemies = true;
