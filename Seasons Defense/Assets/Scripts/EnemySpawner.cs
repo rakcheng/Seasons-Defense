@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour
     
     //Enemy Prefabs
     public GameObject[] enemiesPrefab;
+    
+    public int waveCount = 2;
 
     //How often the enemies will spawn in
     public float enemyInterval = 3f;
@@ -16,9 +18,6 @@ public class EnemySpawner : MonoBehaviour
     public int enemyCount = 0;
     private int _enemyAtStart;
 
-    private int _waveCount = 2;
-    
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +30,9 @@ public class EnemySpawner : MonoBehaviour
         LevelManager.Instance.finishedSpawningEnemies = false;
         LevelManager.Instance.enemiesCount = 0;
         
-        while(_waveCount > 0)
+        while(waveCount > 0)
         {
-            _waveCount--;
+            waveCount--;
             while (enemyCount > 0)
             {
                 LevelManager.Instance.enemiesCount++;
@@ -47,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             enemyCount = ++_enemyAtStart;
-            yield return new WaitForSeconds(9);
+            yield return new WaitForSeconds(6);
         }
 
         LevelManager.Instance.finishedSpawningEnemies = true;
