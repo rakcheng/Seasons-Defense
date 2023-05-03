@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour
     public GameObject missilePrefab;
     public float offset;
     
-    private int _missileCount = 5;
+    private int _missileCount = 10;
     private Vector3 _offsetFirePosition;
 
     private bool _disabled;

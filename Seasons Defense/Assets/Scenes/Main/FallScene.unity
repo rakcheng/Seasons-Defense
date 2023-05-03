@@ -2552,8 +2552,9 @@ MonoBehaviour:
   - {fileID: 276527128}
   - {fileID: 1609334571}
   enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
-  delayMissileSpawn: 1
+  delayMissileSpawn: 0.25
   missilesToSpawn: 3
+  waveCount: 2
 --- !u!4 &298448201
 Transform:
   m_ObjectHideFlags: 0
@@ -6384,7 +6385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58baa34ba3e0cc40ba57acc6b28dbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!95 &596862600
 Animator:
   serializedVersion: 5
@@ -10080,7 +10080,7 @@ MonoBehaviour:
   towersCount: 0
   cityWorth: 100
   ammoWorth: 5
-  towerDecider: {fileID: 0}
+  towerDecider: {fileID: 1287318101}
   gameOver: 0
   _multiplier: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!114 &1243093934
@@ -12690,6 +12690,7 @@ MonoBehaviour:
   enemiesPrefab:
   - {fileID: 576879747649476043, guid: 349f98edb7cd25043b0346b1cd0ef465, type: 3}
   - {fileID: 576879747649476043, guid: 349f98edb7cd25043b0346b1cd0ef465, type: 3}
+  waveCount: 2
   enemyInterval: 3
   enemyCount: 2
 --- !u!4 &1639084239
