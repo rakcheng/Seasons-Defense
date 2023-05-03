@@ -8,6 +8,9 @@ public class Tower : MonoBehaviour
     
     public GameObject missilePrefab;
     public GameObject firePositionGameObject;
+
+    [Header("Cannon Tower")] 
+    public bool rotateAsCannon = false;
     public GameObject rotatePositionGameObject;
     
     private int _missileCount = 10;
@@ -24,6 +27,7 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
+        if (!rotateAsCannon) return;
         LookAtTarget();
     }
 

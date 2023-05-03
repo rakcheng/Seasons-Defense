@@ -338,8 +338,8 @@ MonoBehaviour:
   ammoText: {fileID: 338444534611077620}
   missilePrefab: {fileID: 267455000183209698, guid: 06053af3ddd444d419666e4a4421d837, type: 3}
   firePositionGameObject: {fileID: 8546430326237663841}
+  rotateAsCannon: 1
   rotatePositionGameObject: {fileID: 1014002513170903239}
-  turnSpeed: 10
 --- !u!65 &3895341670720060781
 BoxCollider:
   m_ObjectHideFlags: 0
