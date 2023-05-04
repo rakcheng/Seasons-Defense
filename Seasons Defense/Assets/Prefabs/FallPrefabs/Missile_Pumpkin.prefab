@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 5723870939431985895}
   - component: {fileID: 6607309410178489844}
   m_Layer: 0
-  m_Name: Trail
+  m_Name: pumpkin_trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,14 +150,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421115081537713743}
-  m_LocalRotation: {x: 0.0012137763, y: 0.0009971844, z: 0.63479716, w: 0.7726773}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.50387967, y: 0.6420963, z: 0.64935064}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6739649413168110517}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!2083052967 &5723870939431985895
 VisualEffect:
   m_ObjectHideFlags: 0
