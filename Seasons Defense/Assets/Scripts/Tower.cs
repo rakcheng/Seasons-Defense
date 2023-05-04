@@ -13,6 +13,9 @@ public class Tower : MonoBehaviour
     public bool rotateAsCannon = false;
     public GameObject rotatePositionGameObject;
     
+    public Animator cannonAnimator;
+    public GameObject cannonDeathParticles;
+    
     private int _missileCount = 10;
     private Vector3 _targetPosition;
     private bool _targeting;
@@ -75,9 +78,13 @@ public class Tower : MonoBehaviour
         _targeting = false;
         _missileCount = 0;
 
+        cannonAnimator.enabled = true;
+        GameObject effect = Instantiate(cannonDeathParticles, firePositionGameObject.transform.position, Quaternion.identity);
+        Destroy(effect, 2f);
         
         LevelManager.Instance.towersCount--;
         LevelManager.Instance.BuildingDestroyed();
+        
         
         UpdateAmmoCount();
     }
