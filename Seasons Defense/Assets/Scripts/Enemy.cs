@@ -36,7 +36,12 @@ public class Enemy : MonoBehaviour
         
         LevelManager.Instance.enemiesCount--;
         LevelManager.Instance.EnemyDestroyed();
-        
+
+        GetComponent<Animator>().enabled = true;
+    }
+
+    public void DeathAnimationComplete()
+    {
         Destroy(gameObject);
     }
 }

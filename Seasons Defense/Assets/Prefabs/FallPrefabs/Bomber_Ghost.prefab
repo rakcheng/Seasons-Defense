@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5568025785030593555}
   - component: {fileID: 5017336821678206518}
   - component: {fileID: 6565752831073718063}
+  - component: {fileID: 6527978948227684208}
   m_Layer: 7
   m_Name: Bomber_Ghost
   m_TagString: Enemy
@@ -171,3 +172,24 @@ MonoBehaviour:
   delayMissileSpawn: 5
   enemyMissileCount: 3
   worth: 100
+--- !u!95 &6527978948227684208
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576879747649476043}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 988076c2c1d61b94ba6a8e779ea10daf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
