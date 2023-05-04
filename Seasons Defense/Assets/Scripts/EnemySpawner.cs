@@ -36,13 +36,13 @@ public class EnemySpawner : MonoBehaviour
             while (enemyCount > 0)
             {
                 LevelManager.Instance.enemiesCount++;
+                enemyCount--;
 
                 //Chooses a random Spawn Point location for the enemy
                 int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
                 int i = Random.Range(0, enemy.Length);
                 Instantiate(enemy[i], spawnLocations[randomSpawnPoint].position, Quaternion.identity);
-                yield return new WaitForSeconds(interval);
-                enemyCount--;
+                if (enemyCount > 0) yield return new WaitForSeconds(interval);
             }
 
             enemyCount = ++_enemyAtStart;

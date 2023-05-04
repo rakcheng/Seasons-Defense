@@ -22,10 +22,13 @@ public class Enemy : MonoBehaviour
         {
             LevelManager.Instance.enemyMissileCount++;
             enemyMissileCount--;
+            
             GameObject missile = Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
-            yield return new WaitForSeconds(delayMissileSpawn);
+            if (enemyMissileCount > 0) yield return new WaitForSeconds(delayMissileSpawn);
         }
+
+        GetComponent<EnemyMovement>().speed *= 3;
     }
 
     // method called when a missile destroys this enemy object

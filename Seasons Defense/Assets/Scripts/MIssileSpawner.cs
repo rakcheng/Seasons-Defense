@@ -36,12 +36,13 @@ public class MissileSpawner : MonoBehaviour
             while (missilesToSpawn > 0)
             {
                 LevelManager.Instance.enemyMissileCount++;
+                missilesToSpawn--;
+
                 //Chooses a random Spawn Point location for the enemy
                 int randomSpawnPoint = Random.Range(0, spawnLocations.Length);
                 GameObject missile = Instantiate(missilePrefab, spawnLocations[randomSpawnPoint].position, Quaternion.identity);
                 missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
-                yield return new WaitForSeconds(interval);
-                missilesToSpawn--;
+                if (missilesToSpawn > 0) yield return new WaitForSeconds(interval);
             }
             
             missilesToSpawn = ++_missilesAtStart;
