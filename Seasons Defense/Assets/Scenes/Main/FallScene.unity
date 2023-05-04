@@ -4985,6 +4985,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1721534633936440442, guid: 1193aab4a32e5404bb7f55434c53d87e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7112151183343376114, guid: 1193aab4a32e5404bb7f55434c53d87e, type: 3}
       propertyPath: m_Name
       value: City_HauntedHouse
