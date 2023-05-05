@@ -1363,8 +1363,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Ammo: xx'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e863de1b27cd78f408884ca2e8d0f0e1, type: 2}
+  m_sharedMaterial: {fileID: -7745218860442668252, guid: e863de1b27cd78f408884ca2e8d0f0e1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
