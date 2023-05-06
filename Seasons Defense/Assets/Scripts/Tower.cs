@@ -97,7 +97,7 @@ public class Tower : MonoBehaviour
     
     private void UpdateAmmoCount()
     {
-        ammoText.SetText("Ammo: " + _missileCount);
+        ammoText.SetText($"{_missileCount}");
     }
 
     private void LookAtTarget()
