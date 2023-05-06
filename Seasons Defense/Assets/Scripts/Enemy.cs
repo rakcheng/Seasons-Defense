@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject enemyMissilePrefab;
+    
+    public GameObject enemyFireParticles;
 
     //Delay how fast the missiles Spawn
     public float delayMissileSpawn = 5f;
@@ -25,6 +27,8 @@ public class Enemy : MonoBehaviour
             
             GameObject missile = Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
+            GameObject effect = Instantiate(enemyFireParticles, missile.transform.position, Quaternion.identity);
+            Destroy(effect, 2f);
             if (enemyMissileCount > 0) yield return new WaitForSeconds(delayMissileSpawn);
         }
 
