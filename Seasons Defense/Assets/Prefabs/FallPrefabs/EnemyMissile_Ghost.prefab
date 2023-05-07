@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f45f4d7a2df254284a431e1153de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 3727858198622731275, guid: 2f7668d8cd54a6b489d7598ad514ac64, type: 3}
+  explosionPrefab: {fileID: 3727858198622731275, guid: 5d94a6b3b25bb7e49ac581c88783cfeb, type: 3}
   target: {x: 0, y: 0, z: 0}
   speed: 2
   worth: 25
