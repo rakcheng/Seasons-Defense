@@ -319,7 +319,7 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 8.15
+    m_Value: 4.43
   scatter:
     m_OverrideState: 1
     m_Value: 0.386
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_Value: 9.3
   aperture:
     m_OverrideState: 1
-    m_Value: 2.1
+    m_Value: 2.4
   focalLength:
     m_OverrideState: 1
     m_Value: 61.01
@@ -470,7 +470,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.4
+    m_Value: 1
   contrast:
     m_OverrideState: 1
     m_Value: -12
