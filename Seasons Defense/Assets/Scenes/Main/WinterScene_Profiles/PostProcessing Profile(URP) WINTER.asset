@@ -15,16 +15,16 @@ MonoBehaviour:
   active: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.4509804, g: 0.2526349, b: 0.05490197, a: 1}
+    m_Value: {r: 0.12589, g: 0.1774402, b: 0.38679248, a: 1}
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.35
+    m_Value: 0.44
   smoothness:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 0.18
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -42,11 +42,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   temperature:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: -8
   tint:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 7
 --- !u!114 &-4800718789940443525
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -316,13 +316,13 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.96
   intensity:
     m_OverrideState: 1
-    m_Value: 4.43
+    m_Value: 7.66
   scatter:
     m_OverrideState: 1
-    m_Value: 0.386
+    m_Value: 0.61
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: PostProcessing Profile(URP)
+  m_Name: PostProcessing Profile(URP) WINTER
   m_EditorClassIdentifier: 
   components:
   - {fileID: -8274018967922396431}
@@ -398,7 +398,7 @@ MonoBehaviour:
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 9.3
+    m_Value: 8.21
   aperture:
     m_OverrideState: 1
     m_Value: 2.4
@@ -470,16 +470,16 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.76
   contrast:
     m_OverrideState: 1
     m_Value: -12
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.9306094, b: 0.9009434, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -2
   saturation:
     m_OverrideState: 1
     m_Value: 9
