@@ -5,14 +5,19 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject enemyMissilePrefab;
-    
-    public GameObject enemyFireParticles;
 
+    public Animator _animator;
+    
     //Delay how fast the missiles Spawn
     public float delayMissileSpawn = 5f;
     public int enemyMissileCount = 3;
 
     public int worth = 100;
+
+    void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
     void Start()
     {
         StartCoroutine(SpawnEnemyMissile());
@@ -24,14 +29,14 @@ public class Enemy : MonoBehaviour
         {
             LevelManager.Instance.enemyMissileCount++;
             enemyMissileCount--;
-            
+            _animator.SetBool("isFiring", true);
+            _animator.enabled = true;
             GameObject missile = Instantiate(enemyMissilePrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             missile.GetComponent<Missile>().SetTarget(SpawnManager.GetCivilizationVec3());
-            GameObject effect = Instantiate(enemyFireParticles, missile.transform.position, Quaternion.identity);
-            Destroy(effect, 2f);
-            if (enemyMissileCount > 0) yield return new WaitForSeconds(delayMissileSpawn);
-        }
+            if (enemyMissileCount > 0 ) yield return new WaitForSeconds(delayMissileSpawn);
 
+            
+        }
         GetComponent<EnemyMovement>().speed *= 3;
     }
 
@@ -43,8 +48,9 @@ public class Enemy : MonoBehaviour
         
         LevelManager.Instance.enemiesCount--;
         LevelManager.Instance.EnemyDestroyed();
-
-        GetComponent<Animator>().enabled = true;
+        
+        _animator.SetTrigger("isDead");
+        _animator.enabled = true;
     }
 
     public void DeathAnimationComplete()

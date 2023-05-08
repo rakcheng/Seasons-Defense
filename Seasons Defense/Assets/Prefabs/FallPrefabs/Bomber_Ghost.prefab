@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMissilePrefab: {fileID: 3147036497879696343, guid: 99ab4e729aa70c14f8f628981244adc6, type: 3}
-  enemyFireParticles: {fileID: 2359093035381025139, guid: 296f43a7022775442aa2a2c32c6624b9, type: 3}
+  _animator: {fileID: 6527978948227684208}
   delayMissileSpawn: 5
   enemyMissileCount: 3
   worth: 100
