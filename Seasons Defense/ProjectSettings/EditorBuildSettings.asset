@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/FallScene.unity
     guid: d53f8633937e089429880822173742db
+  - enabled: 1
+    path: Assets/Scenes/Main/WinterScene.unity
+    guid: 82fb0b597df7ec84d8e71e0b208ef6d3
   m_configObjects: {}
