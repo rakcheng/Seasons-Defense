@@ -10,6 +10,7 @@ public class MenuHoverTextEffect : MonoBehaviour
 
    public void makeTextBigger()
     {
+        AudioManager.Instance.Play("MenuHover");
         button.transform.localScale = BiggerSize;
     }
 
