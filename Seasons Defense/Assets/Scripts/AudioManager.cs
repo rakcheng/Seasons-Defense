@@ -25,7 +25,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         
-        Play("FallTheme");
     }
 
     public void Play(string name)

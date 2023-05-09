@@ -49,6 +49,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
         Instance = this;
         finishedSpawningEnemies = false;
         finishedSpawningMissiles = false;
@@ -57,6 +58,14 @@ public class LevelManager : MonoBehaviour
         
         citiesCount = 6;
         towersCount = 3;
+    }
+
+    private void Start()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "FallScene") AudioManager.Instance.Play("FallTheme");
+        else if (scene.name == "WinterScene") Debug.Log("Playing Winter Theme..."); // AudioManager.Instance.Play("FallTheme");
     }
 
     // Update is called once per frame
