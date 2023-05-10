@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4249249685165762819}
   - component: {fileID: 8358095838827425785}
   - component: {fileID: -222665942823701928}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Missile_Pumpkin
   m_TagString: Player
   m_Icon: {fileID: 0}
