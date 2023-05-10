@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: Pumpkin Trail
+  m_Name: Snowball Trail
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -56,7 +56,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pumpkin Trail
+  m_Name: Snowball Trail
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614627}
   - {fileID: 8926484042661614644}
   - {fileID: 8926484042661614690}
-  m_UIPosition: {x: 941, y: 795}
+  m_UIPosition: {x: 941, y: 796}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1564,7 +1564,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"a0fd0ab4fb2568d42921949942359cb8","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"8bfe0fe44cebd8048ab2994085159cf1","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: baseColorMap
@@ -2341,7 +2341,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: metallic
@@ -2405,7 +2405,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":0.12733061611652375,"b":0.004716992378234863,"a":1.0},"time":0.0},{"color":{"r":0.5566037893295288,"g":0.27311742305755618,"b":0.0,"a":1.0},"time":0.5235370397567749},{"color":{"r":0.12264150381088257,"g":0.12264150381088257,"b":0.12264150381088257,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.1735256016254425},{"alpha":0.800000011920929,"time":0.7676509022712708}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.5025882124900818,"b":0.6603773832321167,"a":1.0},"time":0.0},{"color":{"r":0.2959238290786743,"g":0.6603773832321167,"b":0.6545461416244507,"a":1.0},"time":0.6147096753120422},{"color":{"r":0.849056601524353,"g":0.849056601524353,"b":0.849056601524353,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.497062623500824},{"alpha":0.800000011920929,"time":0.7941252589225769}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
