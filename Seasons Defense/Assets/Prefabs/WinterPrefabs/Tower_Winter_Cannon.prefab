@@ -842,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoText: {fileID: 0}
-  missilePrefab: {fileID: 267455000183209698, guid: 06053af3ddd444d419666e4a4421d837, type: 3}
+  missilePrefab: {fileID: 2153414447305790694, guid: 8a3cbe26e32ce844abdde2cd224c5c66, type: 3}
   firePositionGameObject: {fileID: 987230738982073805}
   rotateAsCannon: 1
   rotatePositionGameObject: {fileID: 8161379734208128349}
