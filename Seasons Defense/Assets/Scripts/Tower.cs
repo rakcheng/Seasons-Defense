@@ -15,6 +15,8 @@ public class Tower : MonoBehaviour
     
     public Animator cannonAnimator;
     public GameObject cannonDeathParticles;
+
+    public GameSO gameSo;
     
     private int _missileCount = 10;
     private Vector3 _targetPosition;
@@ -23,6 +25,7 @@ public class Tower : MonoBehaviour
 
     private void Start()
     {
+        _missileCount = gameSo.towerAmmo;
         _disabled = false;
         _targeting = false;
         UpdateAmmoCount();
@@ -45,7 +48,7 @@ public class Tower : MonoBehaviour
         _missileCount--;
         Missile missile = Instantiate(missilePrefab, firePositionGameObject.transform.position, Quaternion.identity).GetComponent<Missile>();
         
-        AudioManager.Instance.Play("MissileSound");
+        AudioManager.Instance.Play("PlayerMissileSound");
         
         // Give the missile the attributes it needs to move towards its target position
 

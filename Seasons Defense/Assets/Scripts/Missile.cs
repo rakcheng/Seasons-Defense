@@ -8,23 +8,24 @@ public class Missile : MonoBehaviour
     //Reason to hide in inspector, is to force setting the target in code. 
     [HideInInspector]
     public Vector3 target;
-    public int speed = 5;
+    public float speed = 5;
 
     // This worth is changed for the Enemy Missile prefab
     public int worth = 0;
     
-    [SerializeField]
-    private GameSO _multiplier;
+    public GameSO gameSo;
 
     
     private void Start()
     {
+        if (!CompareTag("Player"))
+            speed *= gameSo.SpeedMultiplier;
         transform.LookAt(target);
     }
     private void Update()
     {
         // Missile position will keep updating as it moves towards its target
-        transform.position = Vector3.MoveTowards(transform.position, target, (speed * _multiplier.SpeedMultiplier) * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target, (speed) * Time.deltaTime);
         if (transform.position == target) Explode();
     }
 
@@ -36,6 +37,11 @@ public class Missile : MonoBehaviour
         
         // Creates an explosion object at missile's location
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        
+        if (!CompareTag("Player"))
+            AudioManager.Instance.Play("Explosion");
+        else
+            AudioManager.Instance.Play("PlayerExplosion");
 
         if (!CompareTag("Player"))
         {
@@ -58,7 +64,7 @@ public class Missile : MonoBehaviour
         // In case of any missile exploding a player's missile, we don't assign points or imply enemy destruction
         if (!CompareTag("Player"))
         {
-            ScoreManager.Instance.AddPoints(worth * _multiplier.ScoreMultiplier);
+            ScoreManager.Instance.AddPoints(worth * gameSo.ScoreMultiplier);
         }
 
         Explode();

@@ -342,6 +342,7 @@ MonoBehaviour:
   rotatePositionGameObject: {fileID: 1014002513170903239}
   cannonAnimator: {fileID: -6479227200805968906}
   cannonDeathParticles: {fileID: 1923955402582759020, guid: 3bd32b28096e7f54dbfc7944f74a3c6e, type: 3}
+  gameSo: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!65 &3895341670720060781
 BoxCollider:
   m_ObjectHideFlags: 0
