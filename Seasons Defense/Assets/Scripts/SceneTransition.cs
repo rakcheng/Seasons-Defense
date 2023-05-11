@@ -20,6 +20,8 @@ public class SceneTransition : MonoBehaviour
     
     IEnumerator FadeIn()
     {
+        AudioSource backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[2];
+        
         float t = 1f;
 
         while (t > 0f)
@@ -27,12 +29,15 @@ public class SceneTransition : MonoBehaviour
             t -= Time.deltaTime;
             float a = curve.Evaluate(t);
             img.color = new Color(img.color.r, img.color.g, img.color.b, a);
+            backgroundAudio.volume = 1 - a;
             yield return 0;
         }
     }
     
     IEnumerator FadeOut(string scene)
     {
+        AudioSource backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[2];
+        
         float t = 0f;
 
         while (t < 1f)
@@ -40,6 +45,7 @@ public class SceneTransition : MonoBehaviour
             t += Time.deltaTime;
             float a = curve.Evaluate(t);
             img.color = new Color(img.color.r, img.color.g, img.color.b, a);
+            backgroundAudio.volume = 1 - a;
             yield return 0;
         }
 
