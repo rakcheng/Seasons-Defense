@@ -139,38 +139,40 @@ public class LevelManager : MonoBehaviour
     private void UpdateSo()
     {
         gameSo.levelCount += 1;
-        gameSo.SpeedMultiplier += 0.1f;
         
         if (gameSo.levelCount % 2 == 0) // every 2 levels
+        {
+            gameSo.SpeedMultiplier += 0.1f;
+        }
+
+        if (gameSo.levelCount % 3 == 0) // every 3 levels
         {
             gameSo.enemiesPerWave += 1;
             gameSo.missilesPerWave += 1;
         }
 
-        if (gameSo.levelCount % 3 == 0) // every 3 levels
-        {
-            gameSo.enemyWaves += 1;
-            gameSo.missileWaves += 1;
-        }
-
         if (gameSo.levelCount % 4 == 0) // every 4 levels
         {
             gameSo.ScoreMultiplier += 1;
+            
+            gameSo.enemyWaves += 1;
         }
 
         if (gameSo.levelCount % 5 == 0) // every 5 levels
         {
-            gameSo.towerAmmo += 3;
+            gameSo.towerAmmo += 5;
+            
+            gameSo.missileWaves += 1;
         }
     }
 
     private void CitySurvivedPoints()
     {
-        ScoreManager.Instance.AddPoints(cityWorth * citiesCount);
+        ScoreManager.Instance.AddPoints(cityWorth * citiesCount * gameSo.scoreMultiplier);
     }
 
     private void AmmoUnusedPoints()
     {
-        ScoreManager.Instance.AddPoints(ammoWorth * towerDecider.GetTotalAmmo());
+        ScoreManager.Instance.AddPoints(ammoWorth * towerDecider.GetTotalAmmo() * gameSo.scoreMultiplier);
     }
 }
