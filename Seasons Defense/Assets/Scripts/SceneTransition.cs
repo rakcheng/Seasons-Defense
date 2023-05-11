@@ -20,7 +20,11 @@ public class SceneTransition : MonoBehaviour
     
     IEnumerator FadeIn()
     {
-        AudioSource backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[2];
+        AudioSource backgroundAudio;
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[1];
+        else
+            backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[2];
         
         float t = 1f;
 
@@ -36,7 +40,11 @@ public class SceneTransition : MonoBehaviour
     
     IEnumerator FadeOut(string scene)
     {
-        AudioSource backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[2];
+        AudioSource backgroundAudio;
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[1];
+        else
+            backgroundAudio = AudioManager.Instance.GetComponents<AudioSource>()[2];
         
         float t = 0f;
 

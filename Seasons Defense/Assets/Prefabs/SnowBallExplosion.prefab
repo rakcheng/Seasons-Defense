@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1507415629846440789}
-  timeToDestroy: 1.333
+  timeToDestroy: 0.75
 --- !u!95 &1507415629846440789
 Animator:
   serializedVersion: 5
