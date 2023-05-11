@@ -7,7 +7,9 @@ public class EnemyMovement : MonoBehaviour
 {
     //The speed of the enemies
     public float speed = 5f;
-    
+
+    public bool faceMatters = false;
+
     private const float RightPadding = 20f;
     private const float LeftPadding = -20f;
     
@@ -17,29 +19,17 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private GameSO _multiplier;
 
-    private Vector3 localScale;
-
     void Start()
     {
         // Enemy will move right if it spawns on the left side of the screen
         _moveRight = transform.position.x < 0;
-        localScale = transform.localScale;
 
-        if (_moveRight)
-        {
-            localScale.x *= 1;
-            transform.localScale = localScale;
-        }
-        else
-        {
-            localScale.x *= -1;
-            transform.localScale = localScale;
-        }
+        if (faceMatters) ChangeFace();
     }
 
     void Update()
     {
-        if (_moveRight)
+        if (faceMatters || _moveRight)
         {
             MoveEnemyRight();
         }
@@ -65,6 +55,20 @@ public class EnemyMovement : MonoBehaviour
     void MoveEnemyRight()
     {
         transform.Translate((speed * _multiplier.SpeedMultiplier)*Time.deltaTime,0,0);
+    }
 
+    void ChangeFace()
+    {
+        if (!_moveRight)
+        {
+            // Get the current rotation of the object
+            Vector3 currentRotation = transform.rotation.eulerAngles;
+
+            // Calculate the new rotation by adding 180 degrees to the current Y-axis rotation
+            Vector3 newRotation = new Vector3(currentRotation.x, currentRotation.y + 180f, currentRotation.z);
+
+            // Apply the new rotation to the object
+            transform.rotation = Quaternion.Euler(newRotation);
+        }
     }
 }

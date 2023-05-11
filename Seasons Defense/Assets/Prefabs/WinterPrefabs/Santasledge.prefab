@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  faceMatters: 1
   _multiplier: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!65 &6574393562918824316
 BoxCollider:
@@ -86,7 +87,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 5.5442123, y: 2.581996, z: 1.8887553}
-  m_Center: {x: -0.21161361, y: 0.5132732, z: 0.15414175}
+  m_Center: {x: -0.3, y: 0.5132732, z: 0.15414175}
 --- !u!95 &-7963186847216363605
 Animator:
   serializedVersion: 5
@@ -119,7 +120,7 @@ GameObject:
   - component: {fileID: 1115884243833350077}
   - component: {fileID: 2845982229329954013}
   - component: {fileID: 5158465548438828895}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: cloth_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738436501593326470}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: santasledge_low
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -236,7 +237,7 @@ GameObject:
   - component: {fileID: 1117174804868861625}
   - component: {fileID: 1901969138347018204}
   - component: {fileID: 757105937569122726}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: gifts_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +320,7 @@ GameObject:
   - component: {fileID: 636181265999214991}
   - component: {fileID: 5685399704407081957}
   - component: {fileID: 7427007214974830028}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: sledge_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
