@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1970192716141555236
 MeshFilter:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f45f4d7a2df254284a431e1153de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 3727858198622731275, guid: 2f7668d8cd54a6b489d7598ad514ac64, type: 3}
+  explosionPrefab: {fileID: 3727858198622731275, guid: 8ec8c4e06b98dd344b3e6fe0b5d07629, type: 3}
   target: {x: 0, y: 0, z: 0}
   speed: 2
   worth: 25

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1808,17 +1808,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: BackgroundMainMenu
-    clip: {fileID: 8300000, guid: 7e670c7333486af43b1bb240c023ffc2, type: 3}
-    pitch: 1
-    volume: 0.62
-    loop: 1
-    source: {fileID: 0}
   - name: MenuHover
     clip: {fileID: 8300000, guid: 7d50d32d603cbda4a833e96895015f50, type: 3}
     pitch: 1
     volume: 0.58
     loop: 0
+    source: {fileID: 0}
+  - name: BackgroundMainMenu
+    clip: {fileID: 8300000, guid: 7e670c7333486af43b1bb240c023ffc2, type: 3}
+    pitch: 1
+    volume: 0.62
+    loop: 1
     source: {fileID: 0}
 --- !u!4 &1977174800
 Transform:

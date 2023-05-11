@@ -10476,7 +10476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 456798398}
   sceneTransitionManager: {fileID: 2079735646}
-  nextLevelSceneName: FallScene
+  nextLevelSceneName: WinterScene
   mainMenuSceneName: MainMenu
   finishedSpawningEnemies: 0
   finishedSpawningMissiles: 0
