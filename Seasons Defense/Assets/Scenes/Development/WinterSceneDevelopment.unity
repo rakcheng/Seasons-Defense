@@ -8559,7 +8559,7 @@ MonoBehaviour:
   - {fileID: 151304669}
   - {fileID: 983468224}
   - {fileID: 1636631056}
-  enemyMissilePrefab: {fileID: 4905943356207431734, guid: eddb5cf1a96864b4bbcaabd1a7c63900, type: 3}
+  enemyMissilePrefab: {fileID: 2309463292107739470, guid: 7c7e6ff97b8f7794da4f47726e6b58ac, type: 3}
   delayMissileSpawn: 0.25
   missilesToSpawn: 3
   waveCount: 2
@@ -14367,8 +14367,8 @@ MonoBehaviour:
   - {fileID: 1840598122}
   - {fileID: 206577937}
   enemiesPrefab:
-  - {fileID: 576879747649476043, guid: 349f98edb7cd25043b0346b1cd0ef465, type: 3}
-  - {fileID: 576879747649476043, guid: 349f98edb7cd25043b0346b1cd0ef465, type: 3}
+  - {fileID: 1478891105651269531, guid: 6ba8dc77f8c27114babfe8cb4c331a97, type: 3}
+  - {fileID: 1478891105651269531, guid: 6ba8dc77f8c27114babfe8cb4c331a97, type: 3}
   waveCount: 2
   enemyInterval: 3
   enemyCount: 2
