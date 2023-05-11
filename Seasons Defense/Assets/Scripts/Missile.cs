@@ -8,7 +8,7 @@ public class Missile : MonoBehaviour
     //Reason to hide in inspector, is to force setting the target in code. 
     [HideInInspector]
     public Vector3 target;
-    public int speed = 5;
+    public float speed = 5;
 
     // This worth is changed for the Enemy Missile prefab
     public int worth = 0;
@@ -18,12 +18,14 @@ public class Missile : MonoBehaviour
     
     private void Start()
     {
+        if (!CompareTag("Player"))
+            speed *= gameSo.SpeedMultiplier;
         transform.LookAt(target);
     }
     private void Update()
     {
         // Missile position will keep updating as it moves towards its target
-        transform.position = Vector3.MoveTowards(transform.position, target, (speed * gameSo.SpeedMultiplier) * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target, (speed) * Time.deltaTime);
         if (transform.position == target) Explode();
     }
 
