@@ -17,10 +17,24 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private GameSO _multiplier;
 
+    private Vector3 localScale;
+
     void Start()
     {
         // Enemy will move right if it spawns on the left side of the screen
         _moveRight = transform.position.x < 0;
+        localScale = transform.localScale;
+
+        if (_moveRight)
+        {
+            localScale.x *= 1;
+            transform.localScale = localScale;
+        }
+        else
+        {
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
     }
 
     void Update()
@@ -51,5 +65,6 @@ public class EnemyMovement : MonoBehaviour
     void MoveEnemyRight()
     {
         transform.Translate((speed * _multiplier.SpeedMultiplier)*Time.deltaTime,0,0);
+
     }
 }
