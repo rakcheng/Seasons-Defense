@@ -6,6 +6,8 @@ public class TowerDecider : MonoBehaviour
     public Tower leftTower;
     public Tower middleTower;
     public Tower rightTower;
+
+    public GameObject markerPrefab;
     
     [Header("Targeting")]
     public GameObject plane;
@@ -35,6 +37,13 @@ public class TowerDecider : MonoBehaviour
             
             float planeHitX = hit.point.x;
             // Debug.Log($"Firing... X={planeHitX}");
+
+
+            if(markerPrefab != null)
+            {
+                GameObject marker = Instantiate(markerPrefab, new Vector3(hit.point.x, hit.point.y, 0), Quaternion.identity);
+                Destroy(marker, 1f);
+            }
 
             if (planeHitX <= -_forthX)
                 TowerToShoot(leftTower, middleTower, rightTower, hit.point);
