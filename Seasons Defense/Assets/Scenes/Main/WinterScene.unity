@@ -39858,6 +39858,12 @@ MonoBehaviour:
     volume: 2.1
     loop: 1
     source: {fileID: 0}
+  - name: DeathSound
+    clip: {fileID: 8300000, guid: 85fb79be14a016d4ea96c91faeb24d4e, type: 3}
+    pitch: 1
+    volume: 1.58
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1976948268
 Transform:
   m_ObjectHideFlags: 0
