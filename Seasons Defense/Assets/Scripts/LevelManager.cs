@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -85,7 +87,14 @@ public class LevelManager : MonoBehaviour
         {
             _levelOver = true;
             Debug.Log("Level won!");
-            sceneTransitionManager.GetComponent<FallTransitionHandler>().StartTransition();
+            if (sceneTransitionManager.TryGetComponent(out TransitionHandler transitionHandler))
+            {
+                sceneTransitionManager.GetComponent<TransitionHandler>().StartTransition();
+            }
+            else
+            {
+                sceneTransitionManager.GetComponent<FallTransitionHandler>().StartTransition();
+            }
             Debug.Log("Total Score " + ScoreManager.Instance.scoreText.text);
         }
     }
