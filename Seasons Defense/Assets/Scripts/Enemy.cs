@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public int enemyMissileCount = 3;
 
     public int worth = 100;
+
+    public GameSO gameSo;
     void Start()
     {
         StartCoroutine(SpawnEnemyMissile());
@@ -35,7 +37,7 @@ public class Enemy : MonoBehaviour
     // todo: add particle effects and/or animations to this method
     public void BeingDestroyed()
     {
-        ScoreManager.Instance.AddPoints(worth);
+        ScoreManager.Instance.AddPoints(worth * gameSo.scoreMultiplier);
         
         LevelManager.Instance.enemiesCount--;
         LevelManager.Instance.EnemyDestroyed();

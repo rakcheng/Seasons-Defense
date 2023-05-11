@@ -15,6 +15,8 @@ public class Tower : MonoBehaviour
     
     public Animator cannonAnimator;
     public GameObject cannonDeathParticles;
+
+    public GameSO gameSo;
     
     private int _missileCount = 10;
     private Vector3 _targetPosition;
@@ -23,6 +25,7 @@ public class Tower : MonoBehaviour
 
     private void Start()
     {
+        _missileCount = gameSo.towerAmmo;
         _disabled = false;
         _targeting = false;
         UpdateAmmoCount();

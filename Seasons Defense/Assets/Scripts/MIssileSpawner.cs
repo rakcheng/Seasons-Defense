@@ -16,10 +16,14 @@ public class MissileSpawner : MonoBehaviour
     public int waveCount = 3;
 
     private float _missilesAtStart;
+
+    public GameSO gameSo;
     
 
     void Start()
     {
+        missilesToSpawn = gameSo.missilesPerWave;
+        waveCount = gameSo.missileWaves;
         _missilesAtStart = missilesToSpawn;
         StartCoroutine(SpawnMissiles(delayMissileSpawn, enemyMissilePrefab));
     }

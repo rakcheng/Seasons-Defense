@@ -2566,6 +2566,7 @@ MonoBehaviour:
   delayMissileSpawn: 0.25
   missilesToSpawn: 3
   waveCount: 2
+  gameSo: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!4 &298448201
 Transform:
   m_ObjectHideFlags: 0
@@ -10550,7 +10551,7 @@ MonoBehaviour:
   ammoWorth: 5
   towerDecider: {fileID: 1287318101}
   gameOver: 0
-  _multiplier: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
+  gameSo: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!114 &1243093934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13286,6 +13287,7 @@ MonoBehaviour:
   waveCount: 2
   enemyInterval: 3
   enemyCount: 2
+  gameSo: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!4 &1639084239
 Transform:
   m_ObjectHideFlags: 0

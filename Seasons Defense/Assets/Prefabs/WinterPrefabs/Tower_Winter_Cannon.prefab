@@ -827,7 +827,7 @@ Transform:
   - {fileID: 7406612961945844689}
   - {fileID: 5096222812052161797}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6724216015345404060
 MonoBehaviour:
@@ -848,6 +848,7 @@ MonoBehaviour:
   rotatePositionGameObject: {fileID: 8161379734208128349}
   cannonAnimator: {fileID: 8737548120308105937}
   cannonDeathParticles: {fileID: 1923955402582759020, guid: 3bd32b28096e7f54dbfc7944f74a3c6e, type: 3}
+  gameSo: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!65 &7555354407234608549
 BoxCollider:
   m_ObjectHideFlags: 0

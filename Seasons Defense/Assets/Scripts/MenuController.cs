@@ -8,8 +8,7 @@ public class MenuController : MonoBehaviour
     public string playButtonLeadsTo;
     public TextMeshProUGUI highScoreText;
     
-    [SerializeField]
-    private GameSO _multiplier;
+    public GameSO gameSo;
     
     
     public void Start()
@@ -17,9 +16,7 @@ public class MenuController : MonoBehaviour
         AudioManager.Instance.Play("BackgroundMainMenu");
         PlayerPrefs.SetInt("Score", 0);
         highScoreText.SetText("High Score: " + PlayerPrefs.GetInt("HighScore", 0));
-        
-        _multiplier.ScoreMultiplier = 1;
-        _multiplier.SpeedMultiplier = 1;
+        InitGameSo();
     }
 
     public void PlayButton()
@@ -31,5 +28,21 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("Quit game");
         Application.Quit();
+    }
+
+    private void InitGameSo()
+    {
+        gameSo.ScoreMultiplier = 1;
+        gameSo.SpeedMultiplier = 1;
+
+        gameSo.levelCount = 0;
+
+        gameSo.enemyWaves = 2;
+        gameSo.enemiesPerWave = 2;
+
+        gameSo.missileWaves = 2;
+        gameSo.missilesPerWave = 3;
+
+        gameSo.towerAmmo = 15;
     }
 }

@@ -18,9 +18,13 @@ public class EnemySpawner : MonoBehaviour
     public int enemyCount = 0;
     private int _enemyAtStart;
 
+    public GameSO gameSo;
+
     // Start is called before the first frame update
     void Start()
     {
+        enemyCount = gameSo.enemiesPerWave;
+        waveCount = gameSo.enemyWaves;
         _enemyAtStart = enemyCount;
         StartCoroutine(SpawnEnemies(enemyInterval, enemiesPrefab));
     }

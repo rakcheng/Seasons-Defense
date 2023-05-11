@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class LevelManager : MonoBehaviour
 {
@@ -39,8 +40,7 @@ public class LevelManager : MonoBehaviour
 
     private bool _levelOver = false;
 
-    [SerializeField]
-    private GameSO _multiplier;
+    public GameSO gameSo;
 
     
     
@@ -132,9 +132,36 @@ public class LevelManager : MonoBehaviour
     {
         CitySurvivedPoints();
         AmmoUnusedPoints();
-        _multiplier.SpeedMultiplier += 0.5f;
-        _multiplier.ScoreMultiplier += 1;
+        UpdateSo();
         sceneTransitionManager.GetComponent<SceneTransition>().FadeTo(nextLevelSceneName);
+    }
+
+    private void UpdateSo()
+    {
+        gameSo.levelCount += 1;
+        gameSo.SpeedMultiplier += 0.1f;
+        
+        if (gameSo.levelCount % 2 == 0) // every 2 levels
+        {
+            gameSo.enemiesPerWave += 1;
+            gameSo.missilesPerWave += 1;
+        }
+
+        if (gameSo.levelCount % 3 == 0) // every 3 levels
+        {
+            gameSo.enemyWaves += 1;
+            gameSo.missileWaves += 1;
+        }
+
+        if (gameSo.levelCount % 4 == 0) // every 4 levels
+        {
+            gameSo.ScoreMultiplier += 1;
+        }
+
+        if (gameSo.levelCount % 5 == 0) // every 5 levels
+        {
+            gameSo.towerAmmo += 3;
+        }
     }
 
     private void CitySurvivedPoints()

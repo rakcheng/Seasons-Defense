@@ -124,7 +124,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   speed: 10
   worth: 0
-  _multiplier: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
+  gameSo: {fileID: 11400000, guid: 571de7e0e57c79845a6455bf145afaa3, type: 2}
 --- !u!1 &5421115081537713743
 GameObject:
   m_ObjectHideFlags: 0
