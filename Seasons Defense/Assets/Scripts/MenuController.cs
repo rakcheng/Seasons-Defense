@@ -14,6 +14,7 @@ public class MenuController : MonoBehaviour
     
     public void Start()
     {
+        AudioManager.Instance.Play("BackgroundMainMenu");
         PlayerPrefs.SetInt("Score", 0);
         highScoreText.SetText("High Score: " + PlayerPrefs.GetInt("HighScore", 0));
         

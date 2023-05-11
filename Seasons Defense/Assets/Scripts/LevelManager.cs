@@ -49,6 +49,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
         Instance = this;
         finishedSpawningEnemies = false;
         finishedSpawningMissiles = false;
@@ -58,6 +59,8 @@ public class LevelManager : MonoBehaviour
         citiesCount = 6;
         towersCount = 3;
     }
+
+  
 
     // Update is called once per frame
     void Update()
@@ -97,8 +100,9 @@ public class LevelManager : MonoBehaviour
             
             // Show the game over UI elements
             gameOverUI.SetActive(true);
-            ScoreManager.Instance.FinalScore();
             
+            ScoreManager.Instance.FinalScore();
+            AudioManager.Instance.Play("DeathSound");
             Debug.Log("Level lost!");
         }
     }
