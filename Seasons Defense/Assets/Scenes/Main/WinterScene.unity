@@ -39858,6 +39858,12 @@ MonoBehaviour:
     volume: 2.1
     loop: 1
     source: {fileID: 0}
+  - name: DeathSound
+    clip: {fileID: 8300000, guid: 85fb79be14a016d4ea96c91faeb24d4e, type: 3}
+    pitch: 1
+    volume: 1.58
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1976948268
 Transform:
   m_ObjectHideFlags: 0
@@ -41730,7 +41736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8270987188074735967, guid: 790cec94cda50804088b625537445e0c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8271042597945580037, guid: 790cec94cda50804088b625537445e0c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -41742,7 +41748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8271071632476099737, guid: 790cec94cda50804088b625537445e0c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8271176982852748881, guid: 790cec94cda50804088b625537445e0c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -41750,7 +41756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8271457760599342311, guid: 790cec94cda50804088b625537445e0c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8271626031514123101, guid: 790cec94cda50804088b625537445e0c, type: 3}
       propertyPath: m_StaticEditorFlags
