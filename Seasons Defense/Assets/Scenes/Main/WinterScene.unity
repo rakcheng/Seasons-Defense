@@ -39851,7 +39851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Explosion
-    clip: {fileID: 8300000, guid: ae32b6e27436d3f4ab6316f5de7cd403, type: 3}
+    clip: {fileID: 8300000, guid: f7d4f806c051e0a488aad4c4783ebafd, type: 3}
     pitch: 0.7
     volume: 2.51
     loop: 0
@@ -39870,6 +39870,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: DeathSound
     clip: {fileID: 8300000, guid: 85fb79be14a016d4ea96c91faeb24d4e, type: 3}
+    pitch: 1
+    volume: 1.58
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerExplosion
+    clip: {fileID: 8300000, guid: 385091db1676fdc4495e28560c818949, type: 3}
+    pitch: 1
+    volume: 1.58
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerMissileSound
+    clip: {fileID: 8300000, guid: d4a3cd67496bbf7418e6f28393fade57, type: 3}
     pitch: 1
     volume: 1.58
     loop: 0

@@ -37,6 +37,11 @@ public class Missile : MonoBehaviour
         
         // Creates an explosion object at missile's location
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        
+        if (!CompareTag("Player"))
+            AudioManager.Instance.Play("Explosion");
+        else
+            AudioManager.Instance.Play("PlayerExplosion");
 
         if (!CompareTag("Player"))
         {

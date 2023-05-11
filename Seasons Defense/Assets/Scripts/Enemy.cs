@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
     // todo: add particle effects and/or animations to this method
     public void BeingDestroyed()
     {
+        GetComponent<Collider>().enabled = false;
         ScoreManager.Instance.AddPoints(worth * gameSo.scoreMultiplier);
         
         LevelManager.Instance.enemiesCount--;
